@@ -1,0 +1,35 @@
+.terminal-container {
+  background-color: #000;
+  color: #0f0;
+  font-family: monospace;
+  /*padding: 10px;*/
+  height: 100vh;
+  overflow-y: auto;
+  border: 2px solid #333;
+}
+
+.output-area {
+  margin-bottom: 10px;
+}
+
+.command-line, .command-output {
+  margin-bottom: 4px;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 5px;
+  color: #0f0;
+}
+
+.input-field {
+  background-color: transparent;
+  border: none;
+  color: #0f0;
+  outline: none;
+  width: 100%;
+}
