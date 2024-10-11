@@ -1,26 +1,33 @@
 import React from 'react';
 import Terminal from '../terminal';
 
-const LevelOne = () => {
+const LevelOne = ({flag}) => {
   // Define the commands for Level 1
+  //let flag = "Example flag level 1";
   const fileSystem = {
-      'flag.txt': 'The flag is {FLAG}',
+      'flag.txt': `The flag is #FLAG{${flag}}$`,
       'README': `Welcome to CryptoHunt:
       CryptoHunt is a browser-based Capture The Flag (CTF) game where your Linux skills will be put to the test! \n
       Use common Linux commands to navigate through directories, search for clues, and unlock flags to progress through various levels.`
   };
 
+  const getCurrentDirectory = (directories) => {
+    let currentDir = fileSystem;
+    for (let i = 1; i < directories.length; i++) {
+        currentDir = currentDir[directories[i]];
+        if (!currentDir) {
+          return null;
+        }
+    }
+
+    return currentDir;
+  }
+
   const commandsConfig = {
-    help: (params) => 'Level 1: Welcome to CryptoHunt.',
-    cat: (params) => {
-      // pass the directories stack into this
-      if (params === 'flag.txt') {
-          return fileSystem['flag.txt'];
-      } else if (params === 'README') {
-          return fileSystem['README'];
-      } else {
-          return 'No such file exists!';
-      }
+    help: (params, directories) => 'Level 1: Welcome to CryptoHunt.',
+    cat: (filename, directories) => {      
+      let currentDir = getCurrentDirectory(directories);
+      return (currentDir[filename] === undefined) ? 'No such file exists' : currentDir[filename];
     }
   };
 
@@ -28,24 +35,6 @@ const LevelOne = () => {
     //alert('Congratulations! You got the flag.');
     // Logic to proceed to the next level
   };
-
-  /// We can add a filesystem for each level, incase they need it
-  /*
-  const fileSystem = {
-    home: {
-      player: {
-        documents: {
-          'level_info.txt': 'This is level 1',
-          'flag.txt': 'FLAG{level_1_flag}',
-        },
-      },
-    },
-    bin: {},
-    etc: {
-      'config.txt': '',
-    },
-  };
-  */
 
   const handleFailure = () => {
     console.log('Incorrect command');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Terminal.css'; // Add basic styling
 
-const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem}) => {
+const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem, sortedFiles}) => {
   const [input, setInput] = useState(''); // Current input command
   const [history, setHistory] = useState([]); // History of all commands and their outputs
   const [commands, setCommands] = useState([]); // Command history for up/down arrow navigation
@@ -66,11 +66,25 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
     setPath(tempPath);
   }, [directories]);
 
-  const listDir = () => {
+  const listDir = (parts) => {
     const currentDir = getCurrentDirectory();
+    let sort = 0;
+    for (let i = 1; i < parts.length; i++) {
+      if (parts[i] == '-S') {
+        sort = 1;
+      }
+    }
+
     if (!currentDir) return 'Error: Directory not found';
 
-    const output = Object.keys(currentDir).join(' '); 
+    let output = '';
+    if (sort === 0) {
+      output = Object.keys(currentDir).join(' ');
+    } else {
+      for (let i = 0; i < sortedFiles.length; i++) {
+          output += `${sortedFiles[i].fileName} : ${sortedFiles[i].fileSize} \n`;  
+      }
+    }
     return output;
   };
   // Predefined fake command handler (You can expand this)
@@ -86,13 +100,13 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
     }
 
     //console.log(command);
-    if (command == 'ls') {
-        output = listDir();
+    const parts = command.trim().split(' ');
+    if (parts[0] == 'ls') {
+        output = listDir(parts);
         setHistory([...history, { command, output }]);
         return;
     }
 
-    const parts = command.trim().split(' ');
     if (parts[0] == 'cd' && parts[1] != undefined) {
         console.log(parts[1]);
         changeDir(parts[1]);
@@ -103,15 +117,9 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
     let file = parts[1];
 
     if (commandsConfig[cmdText]) {
-      output = commandsConfig[cmdText](file);
-      if (onSuccess && output.toLowerCase().includes('flag')) {
-        onSuccess(); // Notify the parent of success when the flag is found
-      }
+      output = commandsConfig[cmdText](file, directories);
     } else {
       output = `Command not found/used/incorrect usage: ${command}`;
-      if (onFailure) {
-        onFailure(); // Notify the parent of incorrect command if needed
-      }
     }
 
     setHistory([...history, { command, output }]);
