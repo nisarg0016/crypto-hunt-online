@@ -45,7 +45,7 @@ const LevelTwo = ({flag}) => {
             mapping.push({fileSize, fileName});
         }
 
-        mapping.sort((a, b) => a.fileSize - b.fileSize);
+        mapping.sort((a, b) => b.fileSize - a.fileSize);
         fileSystem[mapping[0].fileName] = `#FLAG{${flag}}$`;
     }
 

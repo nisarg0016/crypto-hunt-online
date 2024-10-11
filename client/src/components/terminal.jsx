@@ -69,9 +69,14 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
   const listDir = (parts) => {
     const currentDir = getCurrentDirectory();
     let sort = 0;
+    let rev = 0;
     for (let i = 1; i < parts.length; i++) {
       if (parts[i] == '-S') {
         sort = 1;
+      }
+      
+      if (parts[i] == '-r') {
+        rev = 1;
       }
     }
 
@@ -80,11 +85,16 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
     let output = '';
     if (sort === 0) {
       output = Object.keys(currentDir).join(' ');
-    } else {
+    } else if (sort && !rev) {
+      for (let i = sortedFiles.length - 1; i >= 0; i--) {
+          output += `${sortedFiles[i].fileName} \n`;  
+      }
+    } else if (sort && rev) {
       for (let i = 0; i < sortedFiles.length; i++) {
-          output += `${sortedFiles[i].fileName} : ${sortedFiles[i].fileSize} \n`;  
+        output += `${sortedFiles[i].fileName} \n`;  
       }
     }
+    
     return output;
   };
   // Predefined fake command handler (You can expand this)
