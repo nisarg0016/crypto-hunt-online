@@ -8,8 +8,23 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
   const [currentCommandIndex, setCurrentCommandIndex] = useState(-1); // Tracks history navigation
   const [directories, setDirectories] = useState(['.']); /// Directory structure
   const [path, setPath] = useState('');
-  const [currentDir, setCurrentDir] = useState(['.']);
   const terminalEndRef = useRef(null); // For scrolling to the bottom
+
+  const getCurrentDirectory = () => {
+    let currentDir = fileSystem;
+    for (let i = 1; i < directories.length; i++) {
+        currentDir = currentDir[directories[i]];
+        if (!currentDir) {
+          return null;
+        }
+    }
+
+    return currentDir;
+  }
+
+  const isFile = (name) => {
+    return name.includes('.');
+  }
 
   const changeDir = (command) => {
       let output = '';
@@ -22,9 +37,21 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
               setDirectories(tempDirectories);
           }
       } else {
-          const tempDirectories = [...directories];
-          tempDirectories.push(command);
-          setDirectories(tempDirectories);
+          const currentDir = getCurrentDirectory();
+
+          if (isFile(command)) {
+            output = 'Cannot cd into a file';
+          } else if (currentDir && currentDir[command]) {
+            const tempDirectories = [...directories];
+            tempDirectories.push(command);
+            setDirectories(tempDirectories);
+          } else {
+            output = `Directory not found: ${command}`;
+          }
+      }
+
+      if (output) {
+        setHistory([...history, {command : `cd ${command}`, output}]);
       }
   };
 
@@ -40,17 +67,12 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
   }, [directories]);
 
   const listDir = () => {
-      let output = '';
-      if (currentDir == '.') {
-        /// root directory
-        output = Object.keys(fileSystem).join(' ');
-        console.log(output);
-      } else {
-        /// go into the file system
-      }
+    const currentDir = getCurrentDirectory();
+    if (!currentDir) return 'Error: Directory not found';
 
-      return output;
-  }
+    const output = Object.keys(currentDir).join(' '); 
+    return output;
+  };
   // Predefined fake command handler (You can expand this)
   const commandHandler = (command) => {
     let output = '';
