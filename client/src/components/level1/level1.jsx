@@ -3,17 +3,34 @@ import Terminal from '../terminal';
 
 const LevelOne = () => {
   // Define the commands for Level 1
+  const fileSystem = {
+      'flag.txt': 'The flag is {FLAG}',
+      'README': `Welcome to CryptoHunt:
+      CryptoHunt is a browser-based Capture The Flag (CTF) game where your Linux skills will be put to the test! \n
+      Use common Linux commands to navigate through directories, search for clues, and unlock flags to progress through various levels.`
+  };
+
   const commandsConfig = {
-    help: () => 'Available commands: help, clear, flag',
-    flag: () => 'FLAG{level_1_complete}', // Simulated flag
+    help: (params) => 'Level 1: Welcome to CryptoHunt.',
+    cat: (params) => {
+      // pass the directories stack into this
+      if (params === 'flag.txt') {
+          return fileSystem['flag.txt'];
+      } else if (params === 'README') {
+          return fileSystem['README'];
+      } else {
+          return 'No such file exists!';
+      }
+    }
   };
 
   const handleSuccess = () => {
-    alert('Congratulations! You got the flag.');
+    //alert('Congratulations! You got the flag.');
     // Logic to proceed to the next level
   };
 
   /// We can add a filesystem for each level, incase they need it
+  /*
   const fileSystem = {
     home: {
       player: {
@@ -28,6 +45,7 @@ const LevelOne = () => {
       'config.txt': '',
     },
   };
+  */
 
   const handleFailure = () => {
     console.log('Incorrect command');

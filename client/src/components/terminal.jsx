@@ -76,7 +76,7 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
   // Predefined fake command handler (You can expand this)
   const commandHandler = (command) => {
     let output = '';
-    const normalizedCommand = command.trim().toLowerCase();
+    //const normalizedCommand = command.trim().toLowerCase();
 
     command = command.trimStart();
     command = command.trimEnd(); // trim trailing whitespaces
@@ -85,7 +85,7 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
       return;
     }
 
-    console.log(command);
+    //console.log(command);
     if (command == 'ls') {
         output = listDir();
         setHistory([...history, { command, output }]);
@@ -99,8 +99,11 @@ const Terminal = ({commandsConfig, levelNumber, onSuccess, onFailure, fileSystem
         return;
     }
 
-    if (commandsConfig[normalizedCommand]) {
-      output = commandsConfig[normalizedCommand]();
+    let cmdText = parts[0];
+    let file = parts[1];
+
+    if (commandsConfig[cmdText]) {
+      output = commandsConfig[cmdText](file);
       if (onSuccess && output.toLowerCase().includes('flag')) {
         onSuccess(); // Notify the parent of success when the flag is found
       }
