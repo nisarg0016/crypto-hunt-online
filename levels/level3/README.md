@@ -1,8 +1,8 @@
-# Level 1
+# Level 3
 ## Task
-1. 100 files each with different sizes and names is provided
-2. The file with the flag is the smallest in size
-3. User uses the flags -S and -r
+1. There are 10 folders each with files and folders with repetitive names
+2. Do `ls` in the main directory but this time with flags -R and -l
+3. Find a file with the name "this file has spaces in the name" which is non executable
 4. `cat` the flag stored in the file mentioned which has the flag stored as `#FLAG{}$`
 
 ## Hints which can be provided
