@@ -28,6 +28,7 @@
 
 .input-field {
   background-color: transparent;
+  font-family: monospace;
   border: none;
   color: #0f0;
   outline: none;
