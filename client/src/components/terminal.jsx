@@ -75,45 +75,35 @@ const Terminal = ({
     const listDir = (parts) => {
         const currentDir = getCurrentDirectory();
         let sort = 0;
+        let rev = 0;
         for (let i = 1; i < parts.length; i++) {
-            if (parts[i] == "-S") {
-                sort = 1;
-            }
+        if (parts[i] == '-S') {
+            sort = 1;
         }
 
-        if (!currentDir) return "Error: Directory not found";
+          if (parts[i] == '-r') {
+            rev = 1;
+        }
+        }
 
-<<<<<<< HEAD
-        let output = "";
+        let output = '';
         if (sort === 0) {
-            output = Object.keys(currentDir).join(" ");
-        } else {
-            for (let i = 0; i < sortedFiles.length; i++) {
-                output += `${sortedFiles[i].fileName} : ${sortedFiles[i].fileSize} \n`;
-            }
+        output = Object.keys(currentDir).join(' ');
+        } else if (sort && !rev) {
+        for (let i = sortedFiles.length - 1; i >= 0; i--) {
+            output += `${sortedFiles[i].fileName} \n`;  
         }
+        } else if (sort && rev) {
+        for (let i = 0; i < sortedFiles.length; i++) {
+            output += `${sortedFiles[i].fileName} \n`;  
+        }
+        }
+        
         return output;
     };
     // Predefined fake command handler (You can expand this)
     const commandHandler = async (command) => {
-        let output = "";
-        //const normalizedCommand = command.trim().toLowerCase();
-=======
-  const listDir = (parts) => {
-    const currentDir = getCurrentDirectory();
-    let sort = 0;
-    let rev = 0;
-    for (let i = 1; i < parts.length; i++) {
-      if (parts[i] == '-S') {
-        sort = 1;
-      }
-      
-      if (parts[i] == '-r') {
-        rev = 1;
-      }
-    }
->>>>>>> 0a50745e1f24a4561ea6e883c3d77ec135a47676
-
+        let output = '';
         command = command.trimStart();
         command = command.trimEnd(); // trim trailing whitespaces
         if (command == "clear" || command == "cls") {
@@ -142,49 +132,6 @@ const Terminal = ({
                 args = json;
             })
             .catch((error) => console.error(error));
-        // if (parts[0] == "ls") {
-        //     output = listDir(parts);
-        //     setHistory([...history, { command, output }]);
-        //     return;
-        // }
-
-<<<<<<< HEAD
-        // if (parts[0] == "cd" && parts[1] != undefined) {
-        //     console.log(parts[1]);
-        //     changeDir(parts[1]);
-        //     return;
-        // }
-=======
-    let output = '';
-    if (sort === 0) {
-      output = Object.keys(currentDir).join(' ');
-    } else if (sort && !rev) {
-      for (let i = sortedFiles.length - 1; i >= 0; i--) {
-          output += `${sortedFiles[i].fileName} \n`;  
-      }
-    } else if (sort && rev) {
-      for (let i = 0; i < sortedFiles.length; i++) {
-        output += `${sortedFiles[i].fileName} \n`;  
-      }
-    }
-    
-    return output;
-  };
-  // Predefined fake command handler (You can expand this)
-  const commandHandler = (command) => {
-    let output = '';
-    //const normalizedCommand = command.trim().toLowerCase();
->>>>>>> 0a50745e1f24a4561ea6e883c3d77ec135a47676
-
-        // let cmdText = parts[0];
-        // let file = parts[1];
-
-        // if (commandsConfig[cmdText]) {
-        //     output = commandsConfig[cmdText](file, directories);
-        // } else {
-        //     output = `Command not found/used/incorrect usage: ${command}`;
-        // }
-        // output = JSON.stringify(args);
         output = JSON.stringify(args);
         setHistory([...history, { command, output }]);
     };
