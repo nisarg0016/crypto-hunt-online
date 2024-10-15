@@ -111,7 +111,7 @@ const Terminal = ({
             return;
         }
         let args;
-        const resp = await fetch("http://localhost:12000/parse", {
+        const resp = await fetch("http://localhost:8000/parse", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -171,12 +171,17 @@ const Terminal = ({
         }
     };
 
+    const logout = () => {
+        window.location.href = 'http://localhost:8000/logout';
+    }
+
     return (
         <div
             className="terminal-container"
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
+            <button onClick={logout}>Logout</button>
             <div className="output-area">
                 {history.map((entry, index) => (
                     <div key={index}>

@@ -1,34 +1,35 @@
-import Terminal from "./components/terminal";
-import LevelOne from "./components/level1/level1";
-import LevelTwo from "./components/level2/level2";
-import { useState } from "react";
-import FlagInput from "./components/flagInput";
+import {useState, useContext} from 'react'
+import LoginWithGoogle from "./pages/Authentication/LoginWithGoogle";
+import CTFMainPage from './CTFmain';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { AuthContext } from './Context/AuthContext';
 
 function App() {
-  const [allFlags, setAllFlags] = useState(["abc", "def"]); /// should ideally retrieve from the backend
-  const [levelComplete, setLevelComplete] = useState([false, false]); // there will be a fixed number of levels anyway
+  const {userDetails } = useContext(AuthContext);
+  const ProtectedRoute = ({ children }) => {
+    if (userDetails === null) {
+      return <Navigate to="/" />
+    }
 
-  const handleFlagSuccess = (levelIndex) => {
-    const updatedLevels = [...levelComplete];
-    updatedLevels[levelIndex] = true; 
-    setLevelComplete(updatedLevels);
+    return children;
+  }
+
+  const ProtectedRouteLogin = ({ children }) => {
+    if (userDetails === null) {
+      return children;
+    }
+
+    return <Navigate to="/ctfmain" />
   };
-
+  
   return (
-    <div className="App">
-      {!levelComplete[0] && 
-      <>
-        <LevelOne flag = {allFlags[0]}/> 
-        <FlagInput flag={allFlags[0]} onSuccess={() => handleFlagSuccess(0)}/>
-      </>
-      }
-      {levelComplete[0] && !levelComplete[1] && 
-        <>
-          <LevelTwo flag = {allFlags[1]}/>
-          <FlagInput flag={allFlags[0]} onSuccess={() => handleFlagSuccess(0)}/>
-        </>
-      }
-    </div>
+      <Routes>
+        <Route path="*" element={<h1>404</h1>}/>
+        <Route path="/" element={<ProtectedRouteLogin><LoginWithGoogle /></ProtectedRouteLogin>}>
+        </Route>
+        <Route path="/ctfmain" element={<ProtectedRoute><CTFMainPage/></ProtectedRoute>} />
+      </Routes>
   );
 }
 
