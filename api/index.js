@@ -116,6 +116,9 @@ app.post("/parse", (req, res) => {
     }
 })
 
+const levelRoute = require("./routes/levels.js");
+app.use("/api/levels", levelRoute);
+
 passportSetup();
 app.listen(process.env.PORT, () => {
     console.log(`CryptoHunt backend listening on port ${process.env.PORT}`);
