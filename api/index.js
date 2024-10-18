@@ -110,6 +110,9 @@ app.post("/parse", (req, res) => {
         if (parsedObject.command == 'ls') {
             parsedObject.args = ls.parseCommand(parsedObject.args);
         }
+        // if (parsedObject.command == 'cd'){
+        //     parsedObject.args = cd.cdCommand(parsedObject.args["_"],req.body.currentPath,dirStructure);
+        // }
         return res.status(200).send(parsedObject);
     } catch (error) {
         console.log(error);
