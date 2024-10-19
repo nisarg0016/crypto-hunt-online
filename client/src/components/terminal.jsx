@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { AuthContext } from "../Context/AuthContext"
 import "./Terminal.css"; // Add basic styling
+import axios from "axios"
 
 const Terminal = ({
     commandsConfig,
@@ -13,55 +15,11 @@ const Terminal = ({
     const [history, setHistory] = useState([]); // History of all commands and their outputs
     const [commands, setCommands] = useState([]); // Command history for up/down arrow navigation
     const [currentCommandIndex, setCurrentCommandIndex] = useState(-1); // Tracks history navigation
-    const [directories, setDirectories] = useState(["."]); /// Directory structure
-    const [path, setPath] = useState("");
+    const [path, setPath] = useState("/.");
+    const [level, setLevel] = useState(0);
     const terminalEndRef = useRef(null); // For scrolling to the bottom
-
-    const getCurrentDirectory = () => {
-        let currentDir = fileSystem;
-        for (let i = 1; i < directories.length; i++) {
-            currentDir = currentDir[directories[i]];
-            if (!currentDir) {
-                return null;
-            }
-        }
-
-        return currentDir;
-    };
-    
-    const isFile = (name) => {
-        return name.includes(".");
-    };
-
-    const changeDir = (command) => {
-        let output = "";
-        if (command == "..") {
-            if (directories.length == 1) {
-                output = "Illegal operation!";
-            } else {
-                const tempDirectories = [...directories];
-                tempDirectories.pop();
-                setDirectories(tempDirectories);
-            }
-        } else {
-            const currentDir = getCurrentDirectory();
-
-            if (isFile(command)) {
-                output = "Cannot cd into a file";
-            } else if (currentDir && currentDir[command]) {
-                const tempDirectories = [...directories];
-                tempDirectories.push(command);
-                setDirectories(tempDirectories);
-            } else {
-                output = `Directory not found: ${command}`;
-            }
-        }
-
-        if (output) {
-            setHistory([...history, { command: `cd ${command}`, output }]);
-        }
-    };
-
+    const { userDetails } = useContext(AuthContext)
+    /*
     useEffect(() => {
         let tempPath = "";
         for (let i = 1; i < directories.length; i++) {
@@ -71,36 +29,22 @@ const Terminal = ({
 
         setPath(tempPath);
     }, [directories]);
+    */
 
-    const listDir = (parts) => {
-        const currentDir = getCurrentDirectory();
-        let sort = 0;
-        let rev = 0;
-        for (let i = 1; i < parts.length; i++) {
-        if (parts[i] == '-S') {
-            sort = 1;
-        }
+    async function levelDetails() {
+        try {
+            const response = await axios.get(`http://localhost:8000/api/levels/get-level-details/${userDetails._id}`);
+            setLevel(response.data.levelNo)
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+    }
 
-          if (parts[i] == '-r') {
-            rev = 1;
-        }
-        }
+    useEffect(() => {
+        //setDirectories();
+        levelDetails();
+    }, [])
 
-        let output = '';
-        if (sort === 0) {
-        output = Object.keys(currentDir).join(' ');
-        } else if (sort && !rev) {
-        for (let i = sortedFiles.length - 1; i >= 0; i--) {
-            output += `${sortedFiles[i].fileName} \n`;  
-        }
-        } else if (sort && rev) {
-        for (let i = 0; i < sortedFiles.length; i++) {
-            output += `${sortedFiles[i].fileName} \n`;  
-        }
-        }
-        
-        return output;
-    };
     // Predefined fake command handler (You can expand this)
     const commandHandler = async (command) => {
         let output = '';
@@ -118,7 +62,9 @@ const Terminal = ({
                 'Accept': 'application/json',
             },
             body: JSON.stringify({
-                command: command
+                command: command,
+                level: level,
+                path: path
             })
         })
             .then((response) => {
@@ -132,8 +78,8 @@ const Terminal = ({
                 args = json;
             })
             .catch((error) => console.error(error));
-        output = JSON.stringify(args);
-        setHistory([...history, { command, output }]);
+        //output = JSON.stringify(args);
+        //setHistory([...history, { command, output }]);
     };
 
     // Handle form submission (when the user presses Enter)
@@ -147,12 +93,6 @@ const Terminal = ({
         }
     };
 
-    // Scroll to the bottom of the terminal
-    /*
-  useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [history]);
-  */
     // Handle Arrow Up/Down keys to navigate command history
     const handleKeyDown = (e) => {
         if (e.key === "ArrowUp") {
@@ -196,7 +136,7 @@ const Terminal = ({
             <form onSubmit={handleSubmit}>
                 <div className="input-line">
                     <span className="prompt">
-                        ${directories.length === 1 ? " " : path}
+                        $
                     </span>
                     <input
                         type="text"

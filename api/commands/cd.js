@@ -1,11 +1,8 @@
-
 function cdCommand(command, currentPath, dirStructure) {
     const currentPathParts = currentPath.split('/'); // Split the command into path parts
     let commandParts = command.split('/');
+    console.log(currentPathParts, currentPath)
     let currentDir = traversePath(currentPath, dirStructure);
-    // console.log("current path = ",currentPath);
-    // console.log("current path parts = ",currentPathParts);
-    // console.log("current Dir = ",currentDir);
 
     if (!currentDir) {
         return 'Invalid current path';
@@ -50,4 +47,6 @@ function traversePath(path, dirStructure) {
     return currentDir;
 }
 
-module.exports = cdCommand;
+module.exports = {
+    cdCommand
+}

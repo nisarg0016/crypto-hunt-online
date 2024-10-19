@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
+const cd = require("./commands/cd.js")
 const dotenv = require("dotenv");
 const passport = require("passport");
 const session = require("express-session"); 
@@ -101,19 +102,36 @@ app.get('/auth/check-session', (req, res) => {
     }
 });
 
-// club login backend left
+// Login backend left
 ////////////////////////////////////////////////
+
+const Level = require("./models/LevelStructure")
+
+async function getDirectoryStructure(level) {
+    const levelExists = await Level.findOne({
+        level: level
+    })
+
+    return levelExists;
+}
 
 app.post("/parse", (req, res) => {
     try {
-        const parsedObject = parse(req.body.command);
+        const command = req.body.command;
+        const path = req.body.path;
+        const parsedObject = parse(command);
+        const level = req.body.level;
+        const directoryStructure = getDirectoryStructure(level);
+        let output = '';
         if (parsedObject.command == 'ls') {
-            parsedObject.args = ls.parseCommand(parsedObject.args);
+            output = ls.parseCommand(parsedObject.args);
+        } else if (parsedObject.command == 'cd') {
+            output = cd.cdCommand(command, path, directoryStructure);
         }
         // if (parsedObject.command == 'cd'){
         //     parsedObject.args = cd.cdCommand(parsedObject.args["_"],req.body.currentPath,dirStructure);
         // }
-        return res.status(200).send(parsedObject);
+        return res.status(200).send({output});
     } catch (error) {
         console.log(error);
     }
