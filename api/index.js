@@ -4,7 +4,7 @@ const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
 const dotenv = require("dotenv");
 const passport = require("passport");
-const session = require("express-session"); 
+const session = require("express-session");
 const app = express();
 const passportSetup = require("./passport-setup");
 const User = require("./models/User")
@@ -30,7 +30,7 @@ app.use(
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }
-))
+    ))
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -107,31 +107,34 @@ app.get('/auth/check-session', (req, res) => {
 
 const Level = require("./models/LevelStructure")
 
-async function getDirectoryStructure(level) {
-    const levelExists = await Level.findOne({
-        level: level
-    })
-
-    return levelExists;
-}
-
-app.post("/parse", (req, res) => {
+app.post("/parse", async (req, res) => {
     try {
         const command = req.body.command;
-        const path = req.body.path;
+        let path = req.body.path;
         const parsedObject = parse(command);
         const level = req.body.level;
-        const directoryStructure = getDirectoryStructure(level);
-        let output = '';
+        let directoryStruct;
+        let output;
+        try {
+            const levelExists = await Level.findOne({
+                level: level
+            })
+
+            directoryStruct = levelExists.directory;
+        } catch (error) {
+            directoryStruct = {};
+        }
+
         if (parsedObject.command == 'ls') {
             output = ls.parseCommand(parsedObject.args);
         } else if (parsedObject.command == 'cd') {
-            output = cd.cdCommand(command, path, directoryStructure);
+            output = "Changed directory!";
+            path = cd.cdCommand(parsedObject.args, path, directoryStruct);
         }
         // if (parsedObject.command == 'cd'){
         //     parsedObject.args = cd.cdCommand(parsedObject.args["_"],req.body.currentPath,dirStructure);
         // }
-        return res.status(200).send({output});
+        return res.status(200).send({ output, path });
     } catch (error) {
         console.log(error);
     }
@@ -186,5 +189,5 @@ const parse = (command) => {
             newArgs.push(tempForQuotes[i]);
         }
     }
-    return {command: mainCommand, args: newArgs};
+    return { command: mainCommand, args: newArgs };
 }

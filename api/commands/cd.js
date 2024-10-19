@@ -1,34 +1,23 @@
 function cdCommand(command, currentPath, dirStructure) {
-    const currentPathParts = currentPath.split('/'); // Split the command into path parts
-    let commandParts = command.split('/');
-    console.log(currentPathParts, currentPath)
+    //console.log(dirStructure)
+    //const currentPathParts = currentPath.split('/'); // Split the command into path parts
+    if (command === undefined) {
+        return "Usage: cd <folder>"
+    }
+
     let currentDir = traversePath(currentPath, dirStructure);
 
     if (!currentDir) {
         return 'Invalid current path';
     }
 
-    for (let part of commandParts) {
-        if (part === '' || part === '.') {
-            // Skip if it's empty or current directory ('.')
-            continue;
-        } else if (part === '..') {
-            // Move up a directory
-            currentPathParts.pop();
-            let parentPath = currentPathParts.join('/');
-            currentDir = traversePath(parentPath,dirStructure);
-        } else if (currentDir[part]) {
-            // Move down into a directory if it exists
-            currentPathParts.push(part);
-            currentDir = currentDir[part];
-        } else {
-            // Directory doesn't exist
-            return `Directory not found: ${part}`;
-        }
+    if (!currentDir[command] || typeof currentDir[command] !== 'object') {
+        return 'No such directory';
     }
-    let newPath = currentPathParts.join('/');
 
-    return newPath;
+    currentDir = currentDir[command];
+    currentPath += `${command}/`
+    return currentPath;
 }
 
 function traversePath(path, dirStructure) {
