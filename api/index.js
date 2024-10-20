@@ -128,12 +128,10 @@ app.post("/parse", async (req, res) => {
         if (parsedObject.command == 'ls') {
             output = ls.parseCommand(parsedObject.args);
         } else if (parsedObject.command == 'cd') {
-            output = "Changed directory!";
+            output = null;
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
         }
-        // if (parsedObject.command == 'cd'){
-        //     parsedObject.args = cd.cdCommand(parsedObject.args["_"],req.body.currentPath,dirStructure);
-        // }
+
         return res.status(200).send({ output, path });
     } catch (error) {
         console.log(error);
