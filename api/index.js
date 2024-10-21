@@ -25,7 +25,8 @@ app.use(session({
 
 
 app.use(
-    cors({
+    cors(
+        {
         origin: "http://localhost:3000",
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
@@ -111,8 +112,9 @@ app.post("/parse", async (req, res) => {
     try {
         const command = req.body.command;
         let path = req.body.path;
-        const parsedObject = parse(command);
         const level = req.body.level;
+        const parsedObject = parseCommand(command);
+        
         let directoryStruct;
         let output;
         try {
@@ -125,11 +127,19 @@ app.post("/parse", async (req, res) => {
             directoryStruct = {};
         }
 
-        if (parsedObject.command == 'ls') {
-            output = ls.parseCommand(parsedObject.args);
-        } else if (parsedObject.command == 'cd') {
-            output = null;
-            path = cd.cdCommand(parsedObject.args, path, directoryStruct);
+        let input = null;
+        for(let i = 0; i < parsedObject.length; i++) {
+            const command = parsedObject[i];
+            if (input != null){
+                command.args.push(input);
+            }
+            if (command.command == 'ls') {
+                output = ls.parseCommand(command.args);
+            } else if (command.command == 'cd') {
+                output = null;
+                path = cd.cdCommand(command.args, path, directoryStruct);
+            }
+            input = output;
         }
 
         return res.status(200).send({ output, path });
@@ -189,3 +199,17 @@ const parse = (command) => {
     }
     return { command: mainCommand, args: newArgs };
 }
+
+const parseCommand = (input) => {
+    const commandsArray = input.trim().split('|');
+    const commands = [];
+
+    for (let i = 0; i < commandsArray.length; i++) {
+        commands.push(parse(commandsArray[i]));
+    }
+
+    return commands;
+}
+
+const obj = parseCommand("ls | cd");
+console.log(obj);
