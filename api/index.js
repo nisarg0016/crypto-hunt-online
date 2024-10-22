@@ -86,7 +86,6 @@ app.get('/user', (req, res) => {
 
 
 app.get('/logout', (req, res) => {
-    const role = req.user.role;
     req.logout(() => {
         res.redirect("http://localhost:3000/");
     });

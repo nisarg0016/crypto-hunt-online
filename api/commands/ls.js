@@ -2,7 +2,6 @@ const fs = require('fs');
 
 function lsCommand(args, currentPath, dirStructure) {
     let currentDir = traversePath(currentPath, dirStructure);
-    console.log(currentDir)
     
     if (!currentDir) {
         return null;

@@ -4,12 +4,6 @@ import "./Terminal.css"; // Add basic styling
 import axios from "axios"
 
 const Terminal = ({
-    commandsConfig,
-    levelNumber,
-    onSuccess,
-    onFailure,
-    fileSystem,
-    sortedFiles,
 }) => {
     const [input, setInput] = useState(""); // Current input command
     const [history, setHistory] = useState([]); // History of all commands and their outputs
