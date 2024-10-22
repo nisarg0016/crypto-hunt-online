@@ -115,10 +115,11 @@ app.post("/parse", async (req, res) => {
         const level = req.body.level;
         let directoryStruct;
         let output;
+
         try {
             const levelExists = await Level.findOne({
                 level: level
-            })
+            });
 
             directoryStruct = levelExists.directory;
         } catch (error) {
@@ -126,7 +127,8 @@ app.post("/parse", async (req, res) => {
         }
 
         if (parsedObject.command == 'ls') {
-            output = ls.parseCommand(parsedObject.args);
+            // Corrected to call lsCommand from ls.js
+            output = ls.lsCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cd') {
             output = null;
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
@@ -136,7 +138,8 @@ app.post("/parse", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-})
+});
+
 
 const levelRoute = require("./routes/levels.js");
 app.use("/api/levels", levelRoute);
