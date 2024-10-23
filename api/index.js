@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
+const cat = require("./commands/cat.js")
 const dotenv = require("dotenv");
 const passport = require("passport");
 const session = require("express-session");
@@ -87,7 +88,6 @@ app.get('/user', (req, res) => {
 
 
 app.get('/logout', (req, res) => {
-    const role = req.user.role;
     req.logout(() => {
         res.redirect("http://localhost:3000/");
     });
@@ -117,10 +117,11 @@ app.post("/parse", async (req, res) => {
         
         let directoryStruct;
         let output;
+
         try {
             const levelExists = await Level.findOne({
                 level: level
-            })
+            });
 
             directoryStruct = levelExists.directory;
         } catch (error) {
@@ -134,10 +135,13 @@ app.post("/parse", async (req, res) => {
                 command.args.push(input);
             }
             if (command.command == 'ls') {
-                output = ls.parseCommand(command.args);
+                output = ls.lsCommand(parsedObject.args, path, directoryStruct);
             } else if (command.command == 'cd') {
                 output = null;
                 path = cd.cdCommand(command.args, path, directoryStruct);
+            }
+            else if (parsedObject.command == 'cat') {
+                output=cat.catCommand(parsedObject.args, path, directoryStruct);
             }
             input = output;
         }
@@ -146,7 +150,8 @@ app.post("/parse", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-})
+});
+
 
 const levelRoute = require("./routes/levels.js");
 app.use("/api/levels", levelRoute);
