@@ -132,18 +132,19 @@ app.post("/parse", async (req, res) => {
         for(let i = 0; i < parsedObject.length; i++) {
             const command = parsedObject[i];
             if (input != null){
-                command.args.push(input);
+                command.args = input;
             }
             if (command.command == 'ls') {
-                output = ls.lsCommand(parsedObject.args, path, directoryStruct);
+                output = ls.lsCommand(command.args, path, directoryStruct);
             } else if (command.command == 'cd') {
                 output = null;
                 path = cd.cdCommand(command.args, path, directoryStruct);
             }
-            else if (parsedObject.command == 'cat') {
-                output=cat.catCommand(parsedObject.args, path, directoryStruct);
+            else if (command.command == 'cat') {
+                output=cat.catCommand(command.args, path, directoryStruct);
             }
             input = output;
+            console.log(output);
         }
 
         return res.status(200).send({ output, path });
@@ -215,6 +216,3 @@ const parseCommand = (input) => {
 
     return commands;
 }
-
-const obj = parseCommand("ls | cd");
-console.log(obj);
