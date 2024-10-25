@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext"
+import FlagInput from "./flagInput";
 import "./Terminal.css"; // Add basic styling
 import axios from "axios"
 
@@ -10,20 +11,10 @@ const Terminal = ({
     const [commands, setCommands] = useState([]); // Command history for up/down arrow navigation
     const [currentCommandIndex, setCurrentCommandIndex] = useState(-1); // Tracks history navigation
     const [path, setPath] = useState(["."]);
+    const [flag, setFlag] = useState("");
     const [level, setLevel] = useState(0);
     const terminalEndRef = useRef(null); // For scrolling to the bottom
     const { userDetails } = useContext(AuthContext)
-    /*
-    useEffect(() => {
-        let tempPath = "";
-        for (let i = 1; i < directories.length; i++) {
-            tempPath = tempPath + "/";
-            tempPath = tempPath + directories[i];
-        }
-
-        setPath(tempPath);
-    }, [directories]);
-    */
 
     function createPathString() {
         let tempPath = "";
@@ -39,6 +30,7 @@ const Terminal = ({
         try {
             const response = await axios.get(`http://localhost:8000/api/levels/get-level-details/${userDetails._id}`);
             setLevel(response.data.levelNo)
+            setFlag(response.data.flag);
           } catch (error) {
             console.error('Error fetching data:', error);
           }
@@ -68,7 +60,8 @@ const Terminal = ({
             body: JSON.stringify({
                 command: command,
                 level: level,
-                path: path
+                path: path,
+                flag: flag
             })
         })
             .then((response) => {
@@ -156,6 +149,7 @@ const Terminal = ({
                     />
                 </div>
             </form>
+            <FlagInput flag={flag} level={level}/>
         </div>
     );
 };

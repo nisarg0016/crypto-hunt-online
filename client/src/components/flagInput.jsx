@@ -1,16 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import axios from "axios"
 
-const FlagInput = ({ flag, onSuccess }) => {
+const FlagInput = ({ flag, level }) => {
+  const { userDetails } = useContext(AuthContext);
   const [userInput, setUserInput] = useState("");
-  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
     if (userInput.trim() === flag) {
-      setMessage("Flag correct!");
-      onSuccess(); // Notify parent of success
+      //alert("Correct flag!");
+      // make the request here
+      try {
+        const response = await axios.post(
+          'http://localhost:8000/api/levels/update-level',
+          { 
+            userId: userDetails._id, 
+            level: level
+          }, // Sending userId and level in the request body
+          {
+              headers: {
+                  'Content-Type': 'application/json', // Sets the content type to JSON
+              },
+          }
+      );
+        if (response.data.success) {
+          window.location.reload();
+        }
+      } catch (error) {
+        throw error;
+      }
     } else {
-      setMessage("Incorrect flag. Try again.");
+      alert("Incorrect flag!");
     }
   };
 
@@ -25,7 +45,6 @@ const FlagInput = ({ flag, onSuccess }) => {
         />
         <button type="submit">Submit</button>
       </form>
-      {message && <p>{message}</p>}
     </div>
   );
 };

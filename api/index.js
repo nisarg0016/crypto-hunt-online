@@ -31,7 +31,8 @@ app.use(
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }
-    ))
+))
+
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -113,6 +114,7 @@ app.post("/parse", async (req, res) => {
         let path = req.body.path;
         const parsedObject = parse(command);
         const level = req.body.level;
+        const flag = req.body.flag;
         let directoryStruct;
         let output;
 
@@ -133,7 +135,7 @@ app.post("/parse", async (req, res) => {
             output = null;
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cat') {
-            output=cat.catCommand(parsedObject.args, path, directoryStruct);
+            output = cat.catCommand(parsedObject.args, path, directoryStruct, flag);
         }
 
         return res.status(200).send({ output, path });

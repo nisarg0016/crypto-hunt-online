@@ -1,11 +1,8 @@
-function catCommand(filePath, currentPath, dirStructure) {
+function catCommand(filePath, currentPath, dirStructure, flag) {
     // If filePath is an array, join it to make a string
     if (Array.isArray(filePath)) {
         filePath = filePath.join('/');
     }
-
-    console.log('Received filePath:', filePath);
-    console.log('Type of filePath:', typeof filePath);
 
     // Ensure filePath is a string
     if (typeof filePath !== 'string') {
@@ -31,6 +28,7 @@ function catCommand(filePath, currentPath, dirStructure) {
 
     // Check if the final part is a file (string or any content)
     if (typeof currentDir === 'string') {
+        currentDir = currentDir.replace(/\${FLAG}/g, flag);
         return currentDir; // Return file content
     } else {
         return `cat: ${filePath}: Is a directory`; // It's a directory, not a file
