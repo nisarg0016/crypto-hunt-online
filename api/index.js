@@ -4,6 +4,7 @@ const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
 const cat = require("./commands/cat.js")
 const dotenv = require("dotenv");
+const grep = require("./commands/grep.js");
 const passport = require("passport");
 const session = require("express-session");
 const app = express();
@@ -134,6 +135,8 @@ app.post("/parse", async (req, res) => {
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cat') {
             output=cat.catCommand(parsedObject.args, path, directoryStruct);
+        } else if (parsedObject.command == 'grep') {
+            output = grep.grepCommand(parsedObject.args[0], parsedObject.args[1], path, directoryStruct);
         }
 
         return res.status(200).send({ output, path });
