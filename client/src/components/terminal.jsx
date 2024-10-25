@@ -4,18 +4,12 @@ import "./Terminal.css"; // Add basic styling
 import axios from "axios"
 
 const Terminal = ({
-    commandsConfig,
-    levelNumber,
-    onSuccess,
-    onFailure,
-    fileSystem,
-    sortedFiles,
 }) => {
     const [input, setInput] = useState(""); // Current input command
     const [history, setHistory] = useState([]); // History of all commands and their outputs
     const [commands, setCommands] = useState([]); // Command history for up/down arrow navigation
     const [currentCommandIndex, setCurrentCommandIndex] = useState(-1); // Tracks history navigation
-    const [path, setPath] = useState("/.");
+    const [path, setPath] = useState(["."]);
     const [level, setLevel] = useState(0);
     const terminalEndRef = useRef(null); // For scrolling to the bottom
     const { userDetails } = useContext(AuthContext)
@@ -30,6 +24,16 @@ const Terminal = ({
         setPath(tempPath);
     }, [directories]);
     */
+
+    function createPathString() {
+        let tempPath = "";
+        for (let i = 1; i < path.length; i++) {
+            tempPath = tempPath + "/";
+            tempPath = tempPath + path[i];
+        }
+
+        return tempPath;
+    }
 
     async function levelDetails() {
         try {
@@ -68,18 +72,23 @@ const Terminal = ({
             })
         })
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 return response.json().then(function (json) {
                     return response.ok ? json : Promise.reject(json);
                 });
             })
             .then((json) => {
-                console.log(json);
+                //console.log(json);
                 args = json;
+                if (args.path !== null) {
+                    setPath(args.path);
+                }
             })
             .catch((error) => console.error(error));
-        //output = JSON.stringify(args);
-        //setHistory([...history, { command, output }]);
+        output = JSON.stringify(args);
+        if (JSON.parse(output)["output"] !== null) {
+            setHistory([...history, { command, output }]);
+        }
     };
 
     // Handle form submission (when the user presses Enter)
@@ -136,7 +145,7 @@ const Terminal = ({
             <form onSubmit={handleSubmit}>
                 <div className="input-line">
                     <span className="prompt">
-                        $
+                        ${path.length > 1 ? createPathString(path) : ' '}
                     </span>
                     <input
                         type="text"

@@ -1,6 +1,4 @@
 import Terminal from "./components/terminal";
-import LevelOne from "./components/level1/level1";
-import LevelTwo from "./components/level2/level2";
 import FlagInput from "./components/flagInput";
 import { useState, useContext } from "react";
 import { AuthContext } from "./Context/AuthContext";
@@ -18,18 +16,8 @@ const CTFMainPage = () => {
     
     return (
     <div className="App">
-      {!levelComplete[0] && 
-      <>
-        <LevelOne flag = {allFlags[0]}/> 
-        <FlagInput flag={allFlags[0]} onSuccess={() => handleFlagSuccess(0)}/>
-      </>
-      }
-      {levelComplete[0] && !levelComplete[1] && 
-        <>
-          <LevelTwo flag = {allFlags[1]}/>
-          <FlagInput flag={allFlags[0]} onSuccess={() => handleFlagSuccess(0)}/>
-        </>
-      }
+      <Terminal/>
+      <FlagInput/>
     </div>
     );
 };

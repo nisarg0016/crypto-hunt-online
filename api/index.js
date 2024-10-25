@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
+const cat = require("./commands/cat.js")
 const dotenv = require("dotenv");
 const passport = require("passport");
 const session = require("express-session");
@@ -86,7 +87,6 @@ app.get('/user', (req, res) => {
 
 
 app.get('/logout', (req, res) => {
-    const role = req.user.role;
     req.logout(() => {
         res.redirect("http://localhost:3000/");
     });
@@ -115,10 +115,11 @@ app.post("/parse", async (req, res) => {
         const level = req.body.level;
         let directoryStruct;
         let output;
+
         try {
             const levelExists = await Level.findOne({
                 level: level
-            })
+            });
 
             directoryStruct = levelExists.directory;
         } catch (error) {
@@ -126,19 +127,21 @@ app.post("/parse", async (req, res) => {
         }
 
         if (parsedObject.command == 'ls') {
-            output = ls.parseCommand(parsedObject.args);
+            // Corrected to call lsCommand from ls.js
+            output = ls.lsCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cd') {
-            output = "Changed directory!";
+            output = null;
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
+        } else if (parsedObject.command == 'cat') {
+            output=cat.catCommand(parsedObject.args, path, directoryStruct);
         }
-        // if (parsedObject.command == 'cd'){
-        //     parsedObject.args = cd.cdCommand(parsedObject.args["_"],req.body.currentPath,dirStructure);
-        // }
+
         return res.status(200).send({ output, path });
     } catch (error) {
         console.log(error);
     }
-})
+});
+
 
 const levelRoute = require("./routes/levels.js");
 app.use("/api/levels", levelRoute);
