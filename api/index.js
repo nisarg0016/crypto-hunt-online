@@ -107,22 +107,24 @@ app.get('/auth/check-session', (req, res) => {
 
 const Level = require("./models/LevelStructure")
 
-app.post("/parse", async (req, res) => {
+app.post("/execute", async (req, res) => {
     try {
         const command = req.body.command;
+        let commands = command.split('|');
         let path = req.body.path;
+        let parsedObjects = commands.map((x) => parse(x));
         const parsedObject = parse(command);
         const level = req.body.level;
         let directoryStruct;
-        let output;
+        let output = '';
 
         try {
             const levelExists = await Level.findOne({
                 level: level
             });
-
             directoryStruct = levelExists.directory;
         } catch (error) {
+            console.log(error);
             directoryStruct = {};
         }
 
@@ -133,7 +135,7 @@ app.post("/parse", async (req, res) => {
             output = null;
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cat') {
-            output=cat.catCommand(parsedObject.args, path, directoryStruct);
+            output = cat.catCommand(parsedObject.args, path, directoryStruct);
         }
 
         return res.status(200).send({ output, path });

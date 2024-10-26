@@ -68,7 +68,7 @@ const Terminal = ({
             body: JSON.stringify({
                 command: command,
                 level: level,
-                path: path
+                path: createPathString()
             })
         })
             .then((response) => {
@@ -86,7 +86,9 @@ const Terminal = ({
             })
             .catch((error) => console.error(error));
         output = JSON.stringify(args);
-        if (JSON.parse(output)["output"] !== null) {
+        let outFinal = args.output;
+        output = outFinal;
+        if (args["output"] !== null) {
             setHistory([...history, { command, output }]);
         }
     };
