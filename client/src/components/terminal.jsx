@@ -111,7 +111,7 @@ const Terminal = ({
             return;
         }
         let args;
-        const resp = await fetch("http://localhost:8000/parse", {
+        const resp = await fetch("http://localhost:8000/execute", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
