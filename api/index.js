@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
+const cd = require("./commands/cd.js")
+const cat = require("./commands/cat.js")
 const dotenv = require("dotenv");
 const passport = require("passport");
-const session = require("express-session"); 
+const session = require("express-session");
 const app = express();
 const passportSetup = require("./passport-setup");
 const User = require("./models/User")
@@ -29,7 +31,7 @@ app.use(
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }
-))
+    ))
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -85,7 +87,6 @@ app.get('/user', (req, res) => {
 
 
 app.get('/logout', (req, res) => {
-    const role = req.user.role;
     req.logout(() => {
         res.redirect("http://localhost:3000/");
     });
@@ -101,20 +102,49 @@ app.get('/auth/check-session', (req, res) => {
     }
 });
 
-// club login backend left
+// Login backend left
 ////////////////////////////////////////////////
 
-app.post("/parse", (req, res) => {
+const Level = require("./models/LevelStructure")
+
+app.post("/parse", async (req, res) => {
     try {
-        const parsedObject = parse(req.body.command);
-        if (parsedObject.command == 'ls') {
-            parsedObject.args = ls.parseCommand(parsedObject.args);
+        const command = req.body.command;
+        let path = req.body.path;
+        const parsedObject = parse(command);
+        const level = req.body.level;
+        let directoryStruct;
+        let output;
+
+        try {
+            const levelExists = await Level.findOne({
+                level: level
+            });
+
+            directoryStruct = levelExists.directory;
+        } catch (error) {
+            directoryStruct = {};
         }
-        return res.status(200).send(parsedObject);
+
+        if (parsedObject.command == 'ls') {
+            // Corrected to call lsCommand from ls.js
+            output = ls.lsCommand(parsedObject.args, path, directoryStruct);
+        } else if (parsedObject.command == 'cd') {
+            output = null;
+            path = cd.cdCommand(parsedObject.args, path, directoryStruct);
+        } else if (parsedObject.command == 'cat') {
+            output=cat.catCommand(parsedObject.args, path, directoryStruct);
+        }
+
+        return res.status(200).send({ output, path });
     } catch (error) {
         console.log(error);
     }
-})
+});
+
+
+const levelRoute = require("./routes/levels.js");
+app.use("/api/levels", levelRoute);
 
 passportSetup();
 app.listen(process.env.PORT, () => {
@@ -162,5 +192,5 @@ const parse = (command) => {
             newArgs.push(tempForQuotes[i]);
         }
     }
-    return {command: mainCommand, args: newArgs};
+    return { command: mainCommand, args: newArgs };
 }
