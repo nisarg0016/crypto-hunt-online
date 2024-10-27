@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
 const cat = require("./commands/cat.js")
-const find = require("./commands/find_1.js")
+const find = require("./commands/find.js")
 const dotenv = require("dotenv");
 const passport = require("passport");
 const session = require("express-session");
@@ -139,7 +139,7 @@ app.post("/execute", async (req, res) => {
             output=cat.catCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'find'){
             output = find.findCommand(parsedObject.args[0],path,directoryStruct);
-            output = cat.catCommand(parsedObject.args, path, directoryStruct);
+            //output = cat.catCommand(parsedObject.args, path, directoryStruct);
         }
 
         return res.status(200).send({ output, path });

@@ -1,5 +1,8 @@
+function createPathString(path) {
+    return path.join("/");
+}
+
 function findCommand(searchTerm, currentPath, dirStructure) {
-    console.log('Starting find command for:', searchTerm);
     if (!searchTerm) {
         return "Usage: find <filename>";
     }
@@ -13,7 +16,8 @@ function findCommand(searchTerm, currentPath, dirStructure) {
     }
 
     // Call recursive function to search for the term
-    let foundPaths = searchDirectory(currentDir, searchTerm, currentPath);
+    let pathUptoNow = createPathString(currentPath)
+    let foundPaths = searchDirectory(currentDir, searchTerm, pathUptoNow);
 
     if (foundPaths.length === 0) {
         return 'No matching files or directories found';
@@ -25,22 +29,19 @@ function findCommand(searchTerm, currentPath, dirStructure) {
 
 // Recursive function to search directories
 function searchDirectory(dir, searchTerm, currentPath) {
-    console.log('started with this');
     let found = [];
-
     // Iterate over each key in the current directory (files and subdirectories)
     for (let item in dir) {
         let newPath = `${currentPath}/${item}`;  // Ensure correct path concatenation
 
         // Check if it's a file or a directory
-        if (typeof dir[item] === 'object') {
+        if (dir[item].type == "dir") {
             // If it's a directory, search inside it recursively
             found = found.concat(searchDirectory(dir[item], searchTerm, newPath));
         }
 
         // Check for case-insensitive match
         if (item.toLowerCase() === searchTerm.toLowerCase()) {
-            console.log(`Found: ${newPath}`);
             found.push(newPath);
         }
     }
