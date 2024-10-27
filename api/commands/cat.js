@@ -20,18 +20,21 @@ function catCommand(filePath, currentPath, dirStructure) {
 
     // Traverse the provided file path from the current directory
     let pathParts = filePath.split('/');
+    console.log(currentDir)
     for (let part of pathParts) {
         if (part === '' || part === '.') continue; // Skip root or current directory
-        if (currentDir[part].type === 'dir') {
+        if (currentDir[part]) {
             currentDir = currentDir[part];
         } else {
             return `cat: ${filePath}: No such file or directory`; // Invalid path
         }
     }
 
+    console.log(currentDir)
+
     // Check if the final part is a file (string or any content)
-    if (currentDir.type === 'dir') {
-        return currentDir; // Return file content
+    if (currentDir.type === 'text') {
+        return currentDir.data; // Return file content
     } else {
         return `cat: ${filePath}: Is a directory`; // It's a directory, not a file
     }
