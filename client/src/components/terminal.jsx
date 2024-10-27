@@ -59,7 +59,7 @@ const Terminal = ({
             return;
         }
         let args;
-        const resp = await fetch("http://localhost:8000/parse", {
+        const resp = await fetch("http://localhost:8000/execute", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -86,7 +86,9 @@ const Terminal = ({
             })
             .catch((error) => console.error(error));
         output = JSON.stringify(args);
-        if (JSON.parse(output)["output"] !== null) {
+        let outFinal = args.output;
+        output = outFinal;
+        if (args["output"] !== null) {
             setHistory([...history, { command, output }]);
         }
     };

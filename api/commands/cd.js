@@ -16,7 +16,7 @@ function cdCommand(command, currentPath, dirStructure) {
         return null;
     }
 
-    if (!currentDir[command] || typeof currentDir[command] !== 'object') {
+    if (!currentDir[command] || currentDir[command].type !== 'dir') {
         return null;
     }
 
@@ -26,12 +26,11 @@ function cdCommand(command, currentPath, dirStructure) {
 }
 
 function traversePath(path, dirStructure) {
-    //const pathParts = path.split('/');
     let currentDir = dirStructure;
     for (let i in path) {
         let part = path[i];
         if (part === '' || part === '.') continue; // Skip root or current directory
-        if (currentDir[part]) {
+        if (currentDir[part].type === 'dir') {
             currentDir = currentDir[part]; // Traverse down to the next directory
         } else {
             return null; // Invalid path
