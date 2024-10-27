@@ -132,7 +132,7 @@ app.post("/execute", async (req, res) => {
             // Corrected to call lsCommand from ls.js
             output = ls.lsCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cd') {
-            output = null;
+            output = "Directory changed!";
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cat') {
             output = cat.catCommand(parsedObject.args, path, directoryStruct);

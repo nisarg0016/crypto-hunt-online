@@ -68,7 +68,7 @@ const Terminal = ({
             body: JSON.stringify({
                 command: command,
                 level: level,
-                path: createPathString()
+                path: path
             })
         })
             .then((response) => {

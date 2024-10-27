@@ -5,7 +5,6 @@ function lsCommand(args, currentPath, dirStructure) {
     args = getopts(args, {
         boolean: ["l", "s", "a", "R", "r"],
     });
-    console.log(args);
     let output = "";
     if (args._.length == 1) {
         let currDir = traversePath(args._[0], currentPath, dirStructure);
@@ -84,12 +83,13 @@ function recursiveOutput(args, out, home, tabs) {
 
 function traversePath(newPath, currPath, dirStructure) {
     let currDir = dirStructure;
-    currPath = currPath.split('/');
+    //currPath = currPath.split('/');
     if (newPath == "") return currDir;
     for (pth in currPath) {
         if (currPath[pth] == '.') continue;
         if (currPath[pth] == '') break;
         currDir = currDir[currPath[pth]];
+        console.log(currDir)
     }
     if (currDir[newPath] == null) return null;
     if (currDir[newPath].type == "dir") {
