@@ -4,9 +4,6 @@ function catCommand(filePath, currentPath, dirStructure) {
         filePath = filePath.join('/');
     }
 
-    console.log('Received filePath:', filePath);
-    console.log('Type of filePath:', typeof filePath);
-
     // Ensure filePath is a string
     if (typeof filePath !== 'string') {
         return `cat: Invalid file path type. Expected a string.`;
@@ -20,7 +17,6 @@ function catCommand(filePath, currentPath, dirStructure) {
 
     // Traverse the provided file path from the current directory
     let pathParts = filePath.split('/');
-    console.log(currentDir)
     for (let part of pathParts) {
         if (part === '' || part === '.') continue; // Skip root or current directory
         if (currentDir[part]) {
@@ -29,8 +25,6 @@ function catCommand(filePath, currentPath, dirStructure) {
             return `cat: ${filePath}: No such file or directory`; // Invalid path
         }
     }
-
-    console.log(currentDir)
 
     // Check if the final part is a file (string or any content)
     if (currentDir.type === 'text') {
