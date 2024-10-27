@@ -26,9 +26,9 @@ function grepCommand(pattern, filePath, currentPath, dirStructure) {
     }
 
     // Check if the final part is a file
-    if (typeof currentDir === 'string') {
+    if (currentDir.type == "text") {
         // Split file content by lines and search for the pattern in each line
-        const lines = currentDir.split('\n');
+        const lines = currentDir.data.split('\n');
         const matchingLines = lines.filter(line => line.includes(pattern));
 
         // Return matching lines or an appropriate message if no match is found
