@@ -83,14 +83,12 @@ function recursiveOutput(args, out, home, tabs) {
 
 function traversePath(newPath, currPath, dirStructure) {
     let currDir = dirStructure;
-    //currPath = currPath.split('/');
-    if (newPath == "") return currDir;
     for (pth in currPath) {
         if (currPath[pth] == '.') continue;
         if (currPath[pth] == '') break;
         currDir = currDir[currPath[pth]];
-        console.log(currDir)
     }
+    if (newPath == "") return currDir;
     if (currDir[newPath] == null) return null;
     if (currDir[newPath].type == "dir") {
         currDir = currDir[newPath];

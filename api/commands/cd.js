@@ -4,8 +4,6 @@ function cdCommand(command, currentPath, dirStructure) {
         return null;
     }
 
-    console.log(typeof currentPath)
-
     if (command === '..') {
         if (currentPath[currentPath.length - 1] === '.') return null;
         currentPath.pop();
@@ -28,7 +26,6 @@ function cdCommand(command, currentPath, dirStructure) {
 }
 
 function traversePath(path, dirStructure) {
-    //const pathParts = path.split('/');
     let currentDir = dirStructure;
     for (let i in path) {
         let part = path[i];
