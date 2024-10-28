@@ -118,6 +118,7 @@ app.post("/execute", async (req, res) => {
         const level = req.body.level;
         const flag = req.body.flag;
         const parsedObject = parseCommand(command);
+        //console.log(parsedObject);
         
         let directoryStruct;
         let output = '';
@@ -135,12 +136,12 @@ app.post("/execute", async (req, res) => {
         let input = null;
         for(let i = 0; i < parsedObject.length; i++) {
             const command = parsedObject[i];
-            if (input != null){
-                command.args = input;
-            }
             if (command.command == 'ls') {
-                output = ls.lsCommand(command.args, path, directoryStruct);
+                output = ls.lsCommand(command.args[0], path, directoryStruct);
             } else if (command.command == 'cd') {
+                if (input != null){
+                    command.args[0] = input;
+                }
                 path = cd.cdCommand(command.args, path, directoryStruct);
                 if (!path) {
                     output = "Invalid action";
@@ -149,16 +150,30 @@ app.post("/execute", async (req, res) => {
                 }
             }
             else if (command.command == 'cat') {
-                output=cat.catCommand(command.args, path, directoryStruct,flag);
+                if (input != null){
+                    command.args[0] = input;
+                }
+                output=cat.catCommand(command.args[0], path, directoryStruct,flag);
             }
             else if (command.command == 'find'){
+                if (input != null){
+                    command.args[0] = input;
+                }
                 output = find.findCommand(command.args[0],path,directoryStruct);
-                //output = cat.catCommand(command.args, path, directoryStruct);
             } else if (command.command == 'grep') {
+
+                /*
+                grep requires two arguments
+                how to decide where to put the previous input for grep command
+                */
+                if (input != null){
+                    command.args[0] = input;
+                }
                 output = grep.grepCommand(command.args[0], command.args[1], path, directoryStruct);
             }
-            input = output;
-            console.log(output);
+            input = output.trimEnd();
+            //input = output;
+            //console.log(output, typeof output, "\n-------\n");
         }
 
         return res.status(200).send({ output, path });
