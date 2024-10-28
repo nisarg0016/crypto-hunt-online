@@ -33,7 +33,8 @@ app.use(
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }
-    ))
+))
+
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -117,6 +118,7 @@ app.post("/execute", async (req, res) => {
         let parsedObjects = commands.map((x) => parse(x));
         const parsedObject = parse(command);
         const level = req.body.level;
+        const flag = req.body.flag;
         let directoryStruct;
         let output = '';
 
@@ -126,7 +128,7 @@ app.post("/execute", async (req, res) => {
             });
             directoryStruct = levelExists.directory;
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             directoryStruct = {};
         }
 
@@ -141,7 +143,7 @@ app.post("/execute", async (req, res) => {
                 output = null;
             }
         } else if (parsedObject.command == 'cat') {
-            output=cat.catCommand(parsedObject.args, path, directoryStruct);
+            output=cat.catCommand(parsedObject.args, path, directoryStruct, flag);
         } else if (parsedObject.command == 'find'){
             output = find.findCommand(parsedObject.args[0],path,directoryStruct);
             //output = cat.catCommand(parsedObject.args, path, directoryStruct);

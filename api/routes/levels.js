@@ -48,7 +48,7 @@ router.get("/get-level-details/:userId", async(req, res) => {
             return res.status(404).send("This level does not exist");
         }
 
-        return res.status(200).send({levelNo: atLevel});
+        return res.status(200).send({levelNo: atLevel, flag: flags[atLevel - 1]});
     } catch (error) {
         return res.status(500).send(error);
     }
@@ -62,10 +62,27 @@ router.get("/get-level/:levelNo", async(req, res) => {
         })
 
         if (!levelExists) {
-            return res.status(404).send("This level does not exist");
+            return res.status(404).send({});
         }
 
         return res.status(200).send(levelExists.directory);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send(error);
+    }
+})
+
+router.post("/update-level/", async(req, res) => {
+    try {
+        const userId = req.body.userId;
+        const levelIndex = req.body.level;
+        /// update the boolean array
+        await User.updateOne(
+            { _id: userId },
+            { $set: { [`levelFinished.${levelIndex - 1}`]: true } }
+        )
+
+        return res.status(200).send("You have passed this level!");
     } catch (error) {
         console.log(error);
         return res.status(500).send(error);

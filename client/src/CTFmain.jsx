@@ -17,7 +17,6 @@ const CTFMainPage = () => {
     return (
     <div className="App">
       <Terminal/>
-      <FlagInput/>
     </div>
     );
 };
