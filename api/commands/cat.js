@@ -27,20 +27,20 @@ function catCommand(filePath, currentPath, dirStructure, flag) {
     }
 
     // Check if the final part is a file (string or any content)
-    if (typeof currentDir === 'string') {
-        currentDir = currentDir.replace(/\${FLAG}/g, flag);
-        return currentDir; // Return file content
+    if (currentDir.type === 'text') {
+        return currentDir.data; // Return file content
     } else {
         return `cat: ${filePath}: Is a directory`; // It's a directory, not a file
     }
 }
+
 function traversePath(path, dirStructure) {
     //const pathParts = path.split('/');
     let currentDir = dirStructure;
     for (let i in path) {
         let part = path[i];
         if (part === '' || part === '.') continue; // Skip root or current directory
-        if (currentDir[part]) {
+        if (currentDir[part].type === 'dir') {
             currentDir = currentDir[part]; // Traverse down to the next directory
         } else {
             return null; // Invalid path

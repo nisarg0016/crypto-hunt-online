@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
 const cat = require("./commands/cat.js")
+const find = require("./commands/find.js")
 const dotenv = require("dotenv");
+const grep = require("./commands/grep.js");
 const passport = require("passport");
 const session = require("express-session");
 const app = express();
@@ -108,23 +110,25 @@ app.get('/auth/check-session', (req, res) => {
 
 const Level = require("./models/LevelStructure")
 
-app.post("/parse", async (req, res) => {
+app.post("/execute", async (req, res) => {
     try {
         const command = req.body.command;
+        let commands = command.split('|');
         let path = req.body.path;
+        let parsedObjects = commands.map((x) => parse(x));
         const parsedObject = parse(command);
         const level = req.body.level;
         const flag = req.body.flag;
         let directoryStruct;
-        let output;
+        let output = '';
 
         try {
             const levelExists = await Level.findOne({
                 level: level
             });
-
             directoryStruct = levelExists.directory;
         } catch (error) {
+            console.log(error);
             directoryStruct = {};
         }
 
@@ -132,10 +136,19 @@ app.post("/parse", async (req, res) => {
             // Corrected to call lsCommand from ls.js
             output = ls.lsCommand(parsedObject.args, path, directoryStruct);
         } else if (parsedObject.command == 'cd') {
-            output = null;
             path = cd.cdCommand(parsedObject.args, path, directoryStruct);
+            if (!path) {
+                output = "Invalid action";
+            } else {
+                output = null;
+            }
         } else if (parsedObject.command == 'cat') {
-            output = cat.catCommand(parsedObject.args, path, directoryStruct, flag);
+            output=cat.catCommand(parsedObject.args, path, directoryStruct);
+        } else if (parsedObject.command == 'find'){
+            output = find.findCommand(parsedObject.args[0],path,directoryStruct);
+            //output = cat.catCommand(parsedObject.args, path, directoryStruct);
+        } else if (parsedObject.command == 'grep') {
+            output = grep.grepCommand(parsedObject.args[0], parsedObject.args[1], path, directoryStruct);
         }
 
         return res.status(200).send({ output, path });
