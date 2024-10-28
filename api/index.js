@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const ls = require("./commands/ls.js")
 const cd = require("./commands/cd.js")
 const cat = require("./commands/cat.js")
+const find = require("./commands/find.js")
 const dotenv = require("dotenv");
+const grep = require("./commands/grep.js");
 const passport = require("passport");
 const session = require("express-session");
 const app = express();
@@ -32,7 +34,8 @@ app.use(
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }
-    ))
+))
+
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -108,23 +111,24 @@ app.get('/auth/check-session', (req, res) => {
 
 const Level = require("./models/LevelStructure")
 
-app.post("/parse", async (req, res) => {
+app.post("/execute", async (req, res) => {
     try {
         const command = req.body.command;
         let path = req.body.path;
         const level = req.body.level;
+        const flag = req.body.flag;
         const parsedObject = parseCommand(command);
         
         let directoryStruct;
-        let output;
+        let output = '';
 
         try {
             const levelExists = await Level.findOne({
                 level: level
             });
-
             directoryStruct = levelExists.directory;
         } catch (error) {
+            //console.log(error);
             directoryStruct = {};
         }
 
@@ -137,11 +141,21 @@ app.post("/parse", async (req, res) => {
             if (command.command == 'ls') {
                 output = ls.lsCommand(command.args, path, directoryStruct);
             } else if (command.command == 'cd') {
-                output = null;
                 path = cd.cdCommand(command.args, path, directoryStruct);
+                if (!path) {
+                    output = "Invalid action";
+                } else {
+                    output = null;
+                }
             }
             else if (command.command == 'cat') {
-                output=cat.catCommand(command.args, path, directoryStruct);
+                output=cat.catCommand(command.args, path, directoryStruct,flag);
+            }
+            else if (command.command == 'find'){
+                output = find.findCommand(command.args[0],path,directoryStruct);
+                //output = cat.catCommand(command.args, path, directoryStruct);
+            } else if (command.command == 'grep') {
+                output = grep.grepCommand(command.args[0], command.args[1], path, directoryStruct);
             }
             input = output;
             console.log(output);
