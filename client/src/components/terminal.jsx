@@ -126,6 +126,7 @@ const Terminal = ({
             tabIndex={0}
         >
             <button onClick={logout}>Logout</button>
+            <h1>Level number: {level}</h1>
             <div className="output-area">
                 {history.map((entry, index) => (
                     <div key={index}>

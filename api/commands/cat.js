@@ -28,7 +28,8 @@ function catCommand(filePath, currentPath, dirStructure, flag) {
 
     // Check if the final part is a file (string or any content)
     if (currentDir.type === 'text') {
-        return currentDir.data; // Return file content
+        const returnedData = currentDir.data.replace(/\${FLAG}/g, flag);
+        return returnedData; // Return file content
     } else {
         return `cat: ${filePath}: Is a directory`; // It's a directory, not a file
     }

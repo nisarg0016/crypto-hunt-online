@@ -128,7 +128,7 @@ app.post("/execute", async (req, res) => {
             });
             directoryStruct = levelExists.directory;
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             directoryStruct = {};
         }
 
@@ -143,7 +143,7 @@ app.post("/execute", async (req, res) => {
                 output = null;
             }
         } else if (parsedObject.command == 'cat') {
-            output=cat.catCommand(parsedObject.args, path, directoryStruct);
+            output=cat.catCommand(parsedObject.args, path, directoryStruct, flag);
         } else if (parsedObject.command == 'find'){
             output = find.findCommand(parsedObject.args[0],path,directoryStruct);
             //output = cat.catCommand(parsedObject.args, path, directoryStruct);

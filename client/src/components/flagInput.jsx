@@ -23,9 +23,6 @@ const FlagInput = ({ flag, level }) => {
               },
           }
       );
-        if (response.data.success) {
-          window.location.reload();
-        }
       } catch (error) {
         throw error;
       }
