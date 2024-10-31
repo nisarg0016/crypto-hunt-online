@@ -110,6 +110,7 @@ app.get('/auth/check-session', (req, res) => {
 ////////////////////////////////////////////////
 
 const Level = require("./models/LevelStructure")
+const levelDetails = require("./routes/levels.json");
 
 app.post("/execute", async (req, res) => {
     try {
@@ -124,11 +125,7 @@ app.post("/execute", async (req, res) => {
         let output = '';
 
         try {
-            
-            const data = require("./routes/levels.json");
-            const levelExists = data.find(item => item.level === level);
-
-            console.log(data);
+            const levelExists = levelDetails.find(item => item.level === level);
 
             if (levelExists) {
                 directoryStruct = levelExists.directory;
