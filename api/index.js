@@ -120,7 +120,7 @@ app.post("/execute", async (req, res) => {
         const level = req.body.level;
         const flag = req.body.flag;
         const parsedObject = parseCommand(command);
-        //console.log(parsedObject);
+        // console.log(parsedObject);
         
         let directoryStruct;
         let output = '';
@@ -142,7 +142,7 @@ app.post("/execute", async (req, res) => {
         for(let i = 0; i < parsedObject.length; i++) {
             const command = parsedObject[i];
             if (command.command == 'ls') {
-                output = ls.lsCommand(command.args[0], path, directoryStruct);
+                output = ls.lsCommand(command.args, path, directoryStruct);
             } else if (command.command == 'cd') {
                 if (input != null){
                     command.args[0] = input;
@@ -238,7 +238,6 @@ const parse = (command) => {
 const parseCommand = (input) => {
     const commandsArray = input.trim().split('|');
     const commands = [];
-
     for (let i = 0; i < commandsArray.length; i++) {
         commands.push(parse(commandsArray[i]));
     }
