@@ -1,0 +1,36 @@
+[
+    {
+        "level": 1,
+        "directory": {
+            "hello.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Welcome to CrypticHunt Online CTF!",
+                "hidden": false
+            },
+            "home": {
+                "flag.txt": {
+                    "type": "text",
+                    "size": 22,
+                    "data": "This is your flag: ${FLAG}",
+                    "hidden": false
+                },
+                "type": "dir",
+                "size": 22,
+                "hidden": false
+            },
+            "README" : {
+                "data": "Try asking for help from the computer.",
+                "type": "text",
+                "size": 40,
+                "hidden": false
+            }
+        }
+    },
+    {
+        "level": 2,
+        "directory": {}
+    }
+
+
+]
