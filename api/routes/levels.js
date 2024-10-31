@@ -54,21 +54,22 @@ router.get("/get-level-details/:userId", async(req, res) => {
     }
 })
 
-router.get("/get-level/:levelNo", async(req, res) => {
+router.get("/get-level/:levelNo", async (req, res) => {
     try {
-        const levelNo = req.params.levelNo;
-        const levelExists = await Level.findOne({
-            level: levelNo
-        })
+        const levelNo = parseInt(req.params.levelNo);
+        const filePath = path.join(__dirname, 'levels.json');
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        const levelData = data.find(level => level.level === levelNo);
+        
 
-        if (!levelExists) {
-            return res.status(404).send({});
+        if (!levelData) {
+            return res.status(404).send({ message: "Level not found" });
         }
 
-        return res.status(200).send(levelExists.directory);
+        return res.status(200).send(levelData.directory);
     } catch (error) {
-        console.log(error);
-        return res.status(500).send(error);
+        console.error(error);
+        return res.status(500).send({ error: "An error occurred" });
     }
 })
 

@@ -11,6 +11,7 @@ const session = require("express-session");
 const app = express();
 const passportSetup = require("./passport-setup");
 const User = require("./models/User")
+const fs = require("fs");
 
 const cors = require("cors");
 dotenv.config();
@@ -123,12 +124,19 @@ app.post("/execute", async (req, res) => {
         let output = '';
 
         try {
-            const levelExists = await Level.findOne({
-                level: level
-            });
-            directoryStruct = levelExists.directory;
+            
+            const data = require("./routes/levels.json");
+            const levelExists = data.find(item => item.level === level);
+
+            console.log(data);
+
+            if (levelExists) {
+                directoryStruct = levelExists.directory;
+            } else {
+                directoryStruct = {}; 
+            }
         } catch (error) {
-            //console.log(error);
+            console.error("Error reading level data:", error);
             directoryStruct = {};
         }
 
