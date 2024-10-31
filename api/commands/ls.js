@@ -54,7 +54,7 @@ function outputGenerator(args, home) {
             out += `${struct[i]}    `;
         }
     }
-    out += '\n';
+    //out += '\n';
     return out;
 }
 

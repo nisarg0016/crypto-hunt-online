@@ -29,7 +29,8 @@ app.use(session({
 
 
 app.use(
-    cors({
+    cors(
+        {
         origin: "http://localhost:3000",
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
@@ -115,12 +116,12 @@ const levelDetails = require("./routes/levels.json");
 app.post("/execute", async (req, res) => {
     try {
         const command = req.body.command;
-        let commands = command.split('|');
         let path = req.body.path;
-        let parsedObjects = commands.map((x) => parse(x));
-        const parsedObject = parse(command);
         const level = req.body.level;
         const flag = req.body.flag;
+        const parsedObject = parseCommand(command);
+        //console.log(parsedObject);
+        
         let directoryStruct;
         let output = '';
 
@@ -137,23 +138,42 @@ app.post("/execute", async (req, res) => {
             directoryStruct = {};
         }
 
-        if (parsedObject.command == 'ls') {
-            // Corrected to call lsCommand from ls.js
-            output = ls.lsCommand(parsedObject.args, path, directoryStruct);
-        } else if (parsedObject.command == 'cd') {
-            path = cd.cdCommand(parsedObject.args, path, directoryStruct);
-            if (!path) {
-                output = "Invalid action";
-            } else {
-                output = null;
+        let input = null;
+        for(let i = 0; i < parsedObject.length; i++) {
+            const command = parsedObject[i];
+            if (command.command == 'ls') {
+                output = ls.lsCommand(command.args[0], path, directoryStruct);
+            } else if (command.command == 'cd') {
+                if (input != null){
+                    command.args[0] = input;
+                }
+                path = cd.cdCommand(command.args, path, directoryStruct);
+                if (!path) {
+                    output = "Invalid action";
+                } else {
+                    output = null;
+                }
             }
-        } else if (parsedObject.command == 'cat') {
-            output=cat.catCommand(parsedObject.args, path, directoryStruct, flag);
-        } else if (parsedObject.command == 'find'){
-            output = find.findCommand(parsedObject.args[0],path,directoryStruct);
-            //output = cat.catCommand(parsedObject.args, path, directoryStruct);
-        } else if (parsedObject.command == 'grep') {
-            output = grep.grepCommand(parsedObject.args[0], parsedObject.args[1], path, directoryStruct);
+            else if (command.command == 'cat') {
+                if (input != null){
+                    command.args[0] = input;
+                }
+                output=cat.catCommand(command.args[0], path, directoryStruct,flag);
+            }
+            else if (command.command == 'find'){
+                if (input != null){
+                    command.args[0] = input;
+                }
+                output = find.findCommand(command.args[0],path,directoryStruct);
+            } else if (command.command == 'grep') {
+                // output = grep.grepCommand(command.args[0], command.args[1], path, directoryStruct);
+                output = grep.grep2(command.args[0], input, path, directoryStruct);
+            }
+            if (output != null) {
+                input = output.trimEnd();
+            }
+            //input = output;
+            // console.log(output, typeof output, "\n-------\n");
         }
 
         return res.status(200).send({ output, path });
@@ -213,4 +233,15 @@ const parse = (command) => {
         }
     }
     return { command: mainCommand, args: newArgs };
+}
+
+const parseCommand = (input) => {
+    const commandsArray = input.trim().split('|');
+    const commands = [];
+
+    for (let i = 0; i < commandsArray.length; i++) {
+        commands.push(parse(commandsArray[i]));
+    }
+
+    return commands;
 }
