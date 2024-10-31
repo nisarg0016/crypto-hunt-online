@@ -38,6 +38,32 @@ function grepCommand(pattern, filePath, currentPath, dirStructure) {
     }
 }
 
+function grep2(pattern,text,currentPath,dirStructure){
+    // Pattern and filePath should be valid strings
+    if (typeof pattern !== 'string' ||  typeof text !== 'string') {
+        return `grep: Invalid arguments. Expected pattern and file path and text as strings.`;
+    }
+
+    // Traverse to the current directory
+    let currentDir = traversePath(currentPath, dirStructure);
+    if (!currentDir) {
+        return `grep: Invalid current path`; // Invalid current path
+    }
+
+    const lines = text.split('\n');
+    const matchingLines = [];
+    for(let line of lines){
+        const words = line.split(' ');
+        for(let word of words){
+            if (word === pattern || word === pattern + '.' || word == pattern + ',' || word === '!'){
+                matchingLines.push(line);
+            }
+        }
+    }
+    return matchingLines.length > 0 ? matchingLines.join('\n') : `grep: No matching lines found`;
+}
+
+
 function traversePath(path, dirStructure) {
     // Traverse path parts within the directory structure
     let currentDir = dirStructure;
@@ -53,5 +79,5 @@ function traversePath(path, dirStructure) {
 }
 
 module.exports = {
-    grepCommand
+    grepCommand,grep2
 };

@@ -166,19 +166,14 @@ app.post("/execute", async (req, res) => {
                 }
                 output = find.findCommand(command.args[0],path,directoryStruct);
             } else if (command.command == 'grep') {
-
-                /*
-                grep requires two arguments
-                how to decide where to put the previous input for grep command
-                */
-                if (input != null){
-                    command.args[0] = input;
-                }
-                output = grep.grepCommand(command.args[0], command.args[1], path, directoryStruct);
+                // output = grep.grepCommand(command.args[0], command.args[1], path, directoryStruct);
+                output = grep.grep2(command.args[0], input, path, directoryStruct);
             }
-            input = output.trimEnd();
+            if (output != null) {
+                input = output.trimEnd();
+            }
             //input = output;
-            //console.log(output, typeof output, "\n-------\n");
+            // console.log(output, typeof output, "\n-------\n");
         }
 
         return res.status(200).send({ output, path });
