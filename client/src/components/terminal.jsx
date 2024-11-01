@@ -183,10 +183,12 @@ const Terminal = () => {
     }
   };
 
-  const handleContainerClick = () => {
-    // Focus the input field when clicking anywhere in the terminal container
-    inputRef.current.focus();
+  const handleContainerClick = (e) => {
+    if (!e.target.closest('.command-output')) {
+      inputRef.current.focus();
+    }
   };
+  
 
   const logout = () => {
     window.location.href = "http://localhost:8000/logout";
