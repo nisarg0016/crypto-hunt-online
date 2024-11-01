@@ -25,13 +25,16 @@ const Terminal = () => {
   const playRickRoll = () => {
     if (!rickRollPlaying) {
       rickRollRef.current.currentTime = rickRollRef.current.currentTime; // Ensure we start from the current time
-      rickRollRef.current.play().then(() => {
-        setRickRollPlaying(true);
-        setTimeout(() => {
-          rickRollRef.current.pause(); // Pause after 0.1 seconds
-          // Do not reset currentTime to maintain the position
-        }, 150); // Play for 100ms
-      }).catch((error) => console.error("Playback failed:", error));
+      rickRollRef.current
+        .play()
+        .then(() => {
+          setRickRollPlaying(true);
+          setTimeout(() => {
+            rickRollRef.current.pause(); // Pause after 0.1 seconds
+            // Do not reset currentTime to maintain the position
+          }, 150); // Play for 100ms
+        })
+        .catch((error) => console.error("Playback failed:", error));
     } else {
       // If already playing, just play from the current time
       rickRollRef.current.play();
@@ -40,7 +43,6 @@ const Terminal = () => {
       }, 150); // Play for another 100ms
     }
   };
-  
 
   function createPathString() {
     let tempPath = "";
@@ -184,11 +186,10 @@ const Terminal = () => {
   };
 
   const handleContainerClick = (e) => {
-    if (!e.target.closest('.command-output')) {
+    if (!e.target.closest(".command-output")) {
       inputRef.current.focus();
     }
   };
-  
 
   const logout = () => {
     window.location.href = "http://localhost:8000/logout";
@@ -265,7 +266,7 @@ const Terminal = () => {
           />
         </div>
       </form>
-      <FlagInput flag={flag} />
+      <FlagInput flag={flag} level={level} />
     </div>
   );
 };
