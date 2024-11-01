@@ -160,6 +160,8 @@ const Terminal = () => {
           } else {
             playRickRoll();
           }
+        } else {
+          playRickRoll();
         }
       } else if (e.key === "ArrowDown") {
         if (currentCommandIndex > 0) {
@@ -173,14 +175,15 @@ const Terminal = () => {
               commandToShow.length
             );
           }, 0);
-        } else {
+        } else if (currentCommandIndex == -1) {
           playRickRoll();
+        } else {
           setInput("");
           setCurrentCommandIndex(-1); // Reset index to indicate no command is selected
           setTimeout(() => {
             inputRef.current.setSelectionRange(0, 0); // Reset cursor position
           }, 0);
-        }
+        } 
       }
     }
   };
@@ -204,12 +207,17 @@ const Terminal = () => {
     >
       <pre className="title">
         {`
-            ForrestKnight (FK) Not A Corporation. All knights reserved.
-                 _______
-            ----/\\     \\______
-            | o   o     --(   )
-            -----------(      )    
-                 | | | | |   __
+            CSES Not A Corporation. All nights reserved.
+ ________  ________      ___    ___ ________  _________  ___  ________          ___  ___  ___  ___  ________   _________   
+|\\   ____\\|\\   __  \\    |\\  \\  /  /|\\   __  \\|\\___   ___\\\\  \\|\\   ____\\        |\\  \\|\\  \\|\\  \\|\\  \\|\\   ___  \\|\\___   ___\\ 
+\\ \\  \\___|\\ \\  \\|\\  \\   \\ \\  \\/  / | \\  \\|\\  \\|___ \\  \\_\\ \\  \\ \\  \\___|        \\ \\  \\\\\\  \\ \\  \\\\\\  \\ \\  \\\\ \\  \\|___ \\  \\_| 
+ \\ \\  \\    \\ \\   _  _\\   \\ \\    / / \\ \\   ____\\   \\ \\  \\ \\ \\  \\ \\  \\            \\ \\   __  \\ \\  \\\\\\  \\ \\  \\\\ \\  \\   \\ \\  \\  
+  \\ \\  \\____\\ \\  \\\\  \\|   \\/  /  /   \\ \\  \\___|    \\ \\  \\ \\ \\  \\ \\  \\____        \\ \\  \\ \\  \\ \\  \\\\\\  \\ \\  \\\\ \\  \\   \\ \\  \\ 
+   \\ \\_______\\ \\__\\\\ _\\ __/  / /      \\ \\__\\        \\ \\__\\ \\ \\__\\ \\_______\\       \\ \\__\\ \\__\\ \\_______\\ \\__\\\\ \\__\\   \\ \\__\\
+    \\|_______|\\|__|\\|__|\\___/ /        \\|__|         \\|__|  \\|__|\\|_______|        \\|__|\\|__|\\|_______|\\|__| \\|__|    \\|__|
+                       \\|___|/                                                                                             
+                                                                                                                           
+                                                                                                                           
           `}
       </pre>
       <button onClick={logout}>Logout</button>
