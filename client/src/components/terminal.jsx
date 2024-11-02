@@ -32,7 +32,7 @@ const Terminal = () => {
           setTimeout(() => {
             rickRollRef.current.pause(); // Pause after 0.1 seconds
             // Do not reset currentTime to maintain the position
-          }, 150); // Play for 100ms
+          }, 100); // Play for 100ms
         })
         .catch((error) => console.error("Playback failed:", error));
     } else {
@@ -40,7 +40,7 @@ const Terminal = () => {
       rickRollRef.current.play();
       setTimeout(() => {
         rickRollRef.current.pause(); // Pause after 0.1 seconds
-      }, 150); // Play for another 100ms
+      }, 100); // Play for another 100ms
     }
   };
 
