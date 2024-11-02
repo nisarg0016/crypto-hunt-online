@@ -63,3 +63,12 @@ pre.title {
   color: #B89076;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: #211D1B;
+  background: #519975;
+}
+
+::selection {
+  color: #211D1B;
+  background: #519975;
+}

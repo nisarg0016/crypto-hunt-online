@@ -100,13 +100,11 @@ const Terminal = () => {
         args = json;
         if (args.path !== null) setPath(args.path);
         const outFinal = args.output;
-        if (outFinal) {
           // Include the current path in the history
           setHistory([
             ...history,
             { command, output: outFinal, currentPath: createPathString() },
           ]);
-        }
       })
       .catch((error) => console.error(error));
 
@@ -189,7 +187,7 @@ const Terminal = () => {
   };
 
   const handleContainerClick = (e) => {
-    if (!e.target.closest(".command-output")) {
+    if (!e.target.closest(".output-text")) {
       inputRef.current.focus();
     }
   };
@@ -247,7 +245,7 @@ const Terminal = () => {
                     </span>
                   );
                 } else {
-                  return <span key={idx}>{item} </span>;
+                  return <span className="output-text" key={idx}>{item} </span>;
                 }
               })}
             </div>
