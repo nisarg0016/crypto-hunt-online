@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import axios from "axios"
+import axios from "axios";
 
 const FlagInput = ({ flag, level }) => {
   const { userDetails } = useContext(AuthContext);
@@ -8,31 +8,36 @@ const FlagInput = ({ flag, level }) => {
 
   const handleSubmit = async (e) => {
     if (userInput.trim() === flag) {
-      //alert("Correct flag!");
-      // make the request here
-      try {
+      // Alert or any success action
+      try {console.log("Level to update:", level);
+
         const response = await axios.post(
           'http://localhost:8000/api/levels/update-level',
           { 
             userId: userDetails._id, 
             level: level
-          }, // Sending userId and level in the request body
+          },
           {
-              headers: {
-                  'Content-Type': 'application/json', // Sets the content type to JSON
-              },
+            headers: {
+              'Content-Type': 'application/json',
+            },
           }
-      );
+        );
+        // Optionally, handle the response (e.g., show a success message)
       } catch (error) {
-        throw error;
+        console.error("Error updating level:", error);
       }
     } else {
       alert("Incorrect flag!");
     }
   };
 
+  const handleClick = (e) => {
+    e.stopPropagation(); // Prevent focus from going back to the terminal
+  };
+
   return (
-    <div className="flag-input-container">
+    <div className="flag-input-container" onClick={handleClick}>
       <form onSubmit={handleSubmit}>
         <label>Enter Flag: </label>
         <input
