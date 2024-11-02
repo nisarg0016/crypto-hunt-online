@@ -1,6 +1,6 @@
 [
     {
-        "level": 1,
+        "level": 0.1,
         "directory": {
             "hello.txt": {
                 "type": "text",

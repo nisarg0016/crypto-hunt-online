@@ -2,9 +2,15 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('./models/User');
 
+const sets = [[0.1,1.1,2.1,3.1,4.1,5.1],[0.1,1.2,2.2,3.2,4.2,5.2],[0.1,1.3,2.3,3.3,4.3,5.3]];
+
 const generateRandomFlag = () => {
     return Math.random().toString(36).substring(2, 10); 
 };
+
+const generateRandomSet = () => {
+    return sets[Math.floor(Math.random() * sets.length)];
+}
 
 module.exports = function () {
     passport.use(new GoogleStrategy({
@@ -30,7 +36,8 @@ module.exports = function () {
                     username: username,
                     email: userEmail,
                     flags: Array.from({ length: 5 }, generateRandomFlag), 
-                    levelFinished: Array(5).fill(false)
+                    levelFinished: Array(5).fill(false),
+                    levels: generateRandomSet() 
                 });
 
                 await newUser.save();

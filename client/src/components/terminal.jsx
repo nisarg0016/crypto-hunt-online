@@ -12,6 +12,7 @@ const Terminal = () => {
   const [path, setPath] = useState(["."]);
   const [flag, setFlag] = useState("");
   const [level, setLevel] = useState(0);
+  const [dispLevel,setDispLevel] = useState(0);
   const terminalEndRef = useRef(null); // For scrolling to the bottom
   const { userDetails } = useContext(AuthContext);
   const inputRef = useRef(null); // Create a ref for the input field
@@ -57,7 +58,8 @@ const Terminal = () => {
       const response = await axios.get(
         `http://localhost:8000/api/levels/get-level-details/${userDetails._id}`
       );
-      setLevel(response.data.levelNo);
+      setDispLevel(response.data.levelNo);
+      setLevel(response.data.level);
       setFlag(response.data.flag);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -67,6 +69,10 @@ const Terminal = () => {
   useEffect(() => {
     levelDetails();
   }, []);
+
+  // useEffect(() => {
+  //   console.log(dispLevel,level);
+  // },[dispLevel,level])
 
   const commandHandler = async (command) => {
     let output = "";
@@ -96,7 +102,7 @@ const Terminal = () => {
         });
       })
       .then((json) => {
-        console.log("Server response:", json);
+        //console.log("Server response:", json);
         args = json;
         if (args.path !== null) setPath(args.path);
         const outFinal = args.output;
@@ -219,7 +225,7 @@ const Terminal = () => {
           `}
       </pre>
       <button onClick={logout}>Logout</button>
-      <h1>Level number: {level}</h1>
+      <h1>Level number: {dispLevel}</h1>
       <div className="output-area">
         {history.map((entry, index) => (
           <div key={index}>
