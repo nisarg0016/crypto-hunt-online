@@ -5,7 +5,7 @@
             "hello.txt": {
                 "type": "text",
                 "size": 33,
-                "data": "Welcome to CrypticHunt Online CTF!",
+                "data": "Welcome to CrypticHunt Online CTF! This is Level 1.",
                 "hidden": false
             },
             "home": {
@@ -29,7 +29,33 @@
     },
     {
         "level": 2,
-        "directory": {}
+        "directory": {            "hello.txt": {
+            "type": "text",
+            "size": 33,
+            "data": "Welcome to CrypticHunt Online CTF! This is level 2.",
+            "hidden": false
+        },
+        "home": {
+            ".flag.txt": {
+                "type": "text",
+                "size": 22,
+                "hidden": true
+            },
+            "-flag.txt": {
+                "type": "text",
+                "size": 22,
+                "hidden": false
+            },
+            "type": "dir",
+            "size": 22,
+            "hidden": false
+        },
+        "README" : {
+            "data": "In this level, you will be needed to retrieve your flag which is split into 2 files. 1st part in a hidden file and 2nd part in a file starting with -.",
+            "type": "text",
+            "size": 40,
+            "hidden": false
+        }}
     }
 
 

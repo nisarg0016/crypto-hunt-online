@@ -133,6 +133,17 @@ app.post("/execute", async (req, res) => {
             } else {
                 directoryStruct = {}; 
             }
+            if (level === 2) {
+                const splitPoint = Math.ceil(flag.length / 2);
+                const flag1 = flag.slice(0, splitPoint);
+                const flag2 = flag.slice(splitPoint);
+                if (directoryStruct.home[".flag.txt"]) {
+                    directoryStruct.home[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                }
+                if (directoryStruct.home["-flag.txt"]) {
+                    directoryStruct.home["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                }
+            }
         } catch (error) {
             console.error("Error reading level data:", error);
             directoryStruct = {};
