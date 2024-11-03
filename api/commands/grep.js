@@ -55,7 +55,7 @@ function grep2(pattern,text,currentPath,dirStructure){
     for(let line of lines){
         const words = line.split(' ');
         for(let word of words){
-            if (word === pattern || word === pattern + '.' || word == pattern + ',' || word === '!'){
+            if (word.indexOf(pattern) !== -1) {
                 matchingLines.push(line);
             }
         }
