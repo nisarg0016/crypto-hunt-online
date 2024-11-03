@@ -21,6 +21,7 @@ const Terminal = () => {
 
   useEffect(() => {
     rickRollRef.current = new Audio("/lol.mp3"); // Ensure your sound file path is correct
+
   }, []);
 
   const playRickRoll = () => {
@@ -189,6 +190,10 @@ const Terminal = () => {
           }, 0);
         } 
       }
+    }
+    else if ((e.ctrlKey || e.metaKey) && e.key === "f"){
+        e.preventDefault();
+        alert("Search functionality is disabled on this page.");
     }
   };
 
