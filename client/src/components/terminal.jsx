@@ -278,7 +278,7 @@ const Terminal = () => {
           />
         </div>
       </form>
-      <FlagInput flag={flag} level={level} />
+      <FlagInput flag={flag} level={dispLevel} />
     </div>
   );
 };

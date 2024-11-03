@@ -51,7 +51,7 @@ router.get("/get-level-details/:userId", async(req, res) => {
         // if (!levelExists) {
         //     return res.status(404).send("This level does not exist");
         // }
-        return res.status(200).send({levelNo: atLevel,level: levels[atLevel], flag: flags[atLevel - 1]});
+        return res.status(200).send({levelNo: atLevel,level: levels[atLevel], flag: flags[atLevel]});
     } catch (error) {
         return res.status(500).send(error);
     }
