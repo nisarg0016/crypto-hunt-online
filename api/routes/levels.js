@@ -85,7 +85,7 @@ router.post("/update-level/", async(req, res) => {
             { _id: userId },
             { $set: { [`levelFinished.${levelIndex}`]: true } }
         )
-
+        
         return res.status(200).send("You have passed this level!");
     } catch (error) {
         console.log(error);
