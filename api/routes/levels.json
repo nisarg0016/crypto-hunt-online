@@ -1964,7 +1964,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -1989,7 +1992,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2014,7 +2020,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2027,7 +2036,6 @@
                 "hidden": false
             },
             "folder4": {
-    
                 "subfolder1": {
                     "file1.txt": {
                         "type": "text",
@@ -2040,7 +2048,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2053,7 +2064,6 @@
                 "hidden": false
             },
             "folder5": {
-                
                 "subfolder1": {
                     "file1.txt": {
                         "type": "text",
@@ -2066,7 +2076,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2091,7 +2104,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2117,7 +2133,10 @@
                         "hidden": false,
                         "executable": false,
                         "data": "This is your flag: ${FLAG}"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2130,7 +2149,6 @@
                 "hidden": false
             },
             "folder8": {
-
                 "subfolder1": {
                     "file1.txt": {
                         "type": "text",
@@ -2143,7 +2161,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2168,7 +2189,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2193,7 +2217,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2235,7 +2262,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2260,7 +2290,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2285,7 +2318,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2298,7 +2334,6 @@
                 "hidden": false
             },
             "folder4": {
-    
                 "subfolder1": {
                     "file1.txt": {
                         "type": "text",
@@ -2311,7 +2346,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2324,7 +2362,6 @@
                 "hidden": false
             },
             "folder5": {
-                
                 "subfolder1": {
                     "file1.txt": {
                         "type": "text",
@@ -2337,7 +2374,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2362,7 +2402,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2381,7 +2424,10 @@
                         "size": 10,
                         "hidden": false,
                         "data": "Lorem ipsum dolor st amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2406,7 +2452,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2438,7 +2487,10 @@
                         "hidden": false,
                         "executable": false,
                         "data": "This is your flag: ${FLAG}"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2463,7 +2515,10 @@
                         "size": 30,
                         "hidden": false,
                         "data": "Lorem ipsum dolor sit amet"
-                    }
+                    },
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false
                 },
                 "file1.txt": {
                     "type": "text",
@@ -2482,7 +2537,7 @@
                 "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
             }
         }
-    },
+    },    
     {
         "level": 3.3,
         "directory": {
@@ -2493,7 +2548,13 @@
                 "hidden": false
             },
             "folder1": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2512,13 +2573,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder2": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2537,13 +2601,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder3": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2562,13 +2629,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder4": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2587,13 +2657,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder5": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2619,13 +2692,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder6": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2644,13 +2720,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder7": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2663,13 +2742,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder8": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2688,13 +2770,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder9": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2713,13 +2798,16 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "folder10": {
+                "type": "dir",
+                "size": 40,
+                "hidden": false,
                 "subfolder1": {
+                    "type": "dir",
+                    "size": 40,
+                    "hidden": false,
                     "file1.txt": {
                         "type": "text",
                         "size": 10,
@@ -2738,10 +2826,7 @@
                     "size": 10,
                     "hidden": false,
                     "data": "Lorem ipsum dolor sit amet"
-                },
-                "type": "dir",
-                "size": 40,
-                "hidden": false
+                }
             },
             "README": {
                 "type": "text",
@@ -2750,7 +2835,7 @@
                 "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
             }
         }
-    },
+    },    
     {
         "level":5.1,
         "directory":{

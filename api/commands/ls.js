@@ -30,8 +30,8 @@ function lsCommand(args, currentPath, dirStructure) {
     return output;
 }
 
-function outputGenerator(args, home) {
-    let out = "";
+function bigArrGenerator(args, home) {
+    let theArr = [];
     if (args.a == false) {
         let struct = Object.keys(home);
         let newHome = {};
@@ -42,7 +42,7 @@ function outputGenerator(args, home) {
         home = newHome;
     }
     if (args.R == true) {
-        out += recursiveOutput(args, out, home, 0);
+        theArr.concat(recursiveOutput(args, theArr, home, 0));
     } else {
         let struct = Object.keys(home);
         for (i in struct) {
@@ -51,10 +51,39 @@ function outputGenerator(args, home) {
                 struct[i] == "size" ||
                 struct[i] == "type"
             ) continue;
-            out += `${struct[i]}    `;
+            let obj = {
+                props: home[struct[i]],
+                name: struct[i]
+            };
+            theArr.push(obj);
         }
     }
     //out += '\n';
+    return theArr;
+}
+
+function sortSize(a, b) {
+    if (a.props.size < b.props.size) {
+        return -1;
+    } else if (a.props.size > b.props.size) {
+        return 1;
+    }
+    return 0;
+}
+
+function outputGenerator(args, home) {
+    let out = "";
+    let arr = bigArrGenerator(args, home);
+    if (args.s == true) {
+        arr.sort(sortSize);
+        arr = arr.reverse();
+    }
+    if (args.r == true) {
+        arr = arr.reverse();
+    }
+    for (let i in arr) {
+        out += `${arr[i].name}    `;
+    }
     return out;
 }
 
