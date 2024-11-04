@@ -28,6 +28,1823 @@
         }
     },
     {
+        "level":1.1,
+        "directory": {
+            "file1.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Ado lorum zapu kyred sqla mknoi rt.",
+                "hidden": false
+            },
+            "file2.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Yolk trab invo carko we fluhp daz.",
+                "hidden": true
+            },
+            "file3.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Treq vi prokl myter zgurt hy plo.",
+                "hidden": false
+            },
+            "file4.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Ghrip kelmun fas proqupt xyz.",
+                "hidden": true
+            },
+            "file5.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Stiko ronp qerta skaal mop denti.",
+                "hidden": false
+            },
+            "file6.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Dint werg clopo frunt ozimo.",
+                "hidden": true
+            },
+            "file7.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Meq zor fluna kark lem frolp xy.",
+                "hidden": false
+            },
+            "file8.txt": {
+                "type": "text",
+                "size": 27,
+                "data": "Zing krolp ba lom trosp wex.",
+                "hidden": true
+            },
+            "file9.txt": {
+                "type": "text",
+                "size": 43,
+                "data": "Plit vex za krunb yert biot qastor ga.",
+                "hidden": false
+            },
+            "file10.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Lorbit krak mesoth yon wimex.",
+                "hidden": false
+            },
+            "file11.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Treql bemul zopent fy kropt xrui.",
+                "hidden": true
+            },
+            "file12.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Muz zwolk danf quin slert wekla.",
+                "hidden": false
+            },
+            "file13.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Jorly met psym porp grafd lint.",
+                "hidden": true
+            },
+            "file14.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Rocha flink trodol vemp qizmo tzel.",
+                "hidden": false
+            },
+            "file15.txt": {
+                "type": "text",
+                "size": 41,
+                "data": "Qinta jrot wefrud qal zepho vambol.",
+                "hidden": true
+            },
+            "file16.txt": {
+                "type": "text",
+                "size": 25,
+                "data": "This is your flag: ${FLAG}",
+                "hidden": false
+            },
+            "file17.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Klort zan trimb zot lexpor dew git vrixpa.",
+                "hidden": false
+            },
+            "file18.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Cromp veq pilto frant wibz qnap jilo.",
+                "hidden": true
+            },
+            "file19.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Klap yino driz wrold vept xrem tuti.",
+                "hidden": false
+            },
+            "file20.txt": {
+                "type": "text",
+                "size": 47,
+                "data": "Frund vek qert yolm benz wopt zeo drz.",
+                "hidden": true
+            },
+            "file21.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Vi drap tombl zetir qlim jax.",
+                "hidden": false
+            },
+            "file22.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Florn wim zatei bhrot tup nezi.",
+                "hidden": true
+            },
+            "file23.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Sronp ke volem uzni trolg faz.",
+                "hidden": false
+            },
+            "file24.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Prit zolpl varg flut brumi nzer.",
+                "hidden": false
+            },
+            "file25.txt": {
+                "type": "text",
+                "size": 27,
+                "data": "Queld wynor gamt onip slort.",
+                "hidden": true
+            },
+            "file26.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Drak fulem gri zop nit vaq ponk.",
+                "hidden": false
+            },
+            "file27.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Ferq polo xan vet umbi trokd zel.",
+                "hidden": true
+            },
+            "file28.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Broxi qat fermin solq zutp nizg ket.",
+                "hidden": false
+            },
+            "file29.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Mink tox zarto proz fom treqp vle rto.",
+                "hidden": true
+            },
+            "file30.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Vert son kla xwoly pex mron.",
+                "hidden": false
+            },
+            "file31.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Cront vak pix qwerp soz trib.",
+                "hidden": false
+            },
+            "file32.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Fyron gropli vemt kri prozd yolm.",
+                "hidden": true
+            },
+            "file33.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Furt bzep tronq jorl den kiq.",
+                "hidden": false
+            },
+            "file34.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Wex ziop qlant mur kry tze.",
+                "hidden": true
+            },
+            "file35.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Brel doxi curn mimble zoprt crosl.",
+                "hidden": false
+            },
+            "file36.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Grept plun zor kamix nart wexr toi.",
+                "hidden": true
+            },
+            "file37.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Pley ronf gilq tram vrox plint.",
+                "hidden": false
+            },
+            "file38.txt": {
+                "type": "text",
+                "size": 46,
+                "data": "Wrimp zento quarp plisk to minx zel.",
+                "hidden": true
+            },
+            "file39.txt": {
+                "type": "text",
+                "size": 52,
+                "data": "Vorkle trom zark pen wex jot golb.",
+                "hidden": false
+            },
+            "file40.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Klemp dart fo qi vopt nex ply.",
+                "hidden": true
+            },
+            "file41.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Tropt mirm bleex vot glib zex.",
+                "hidden": false
+            },
+            "file42.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Nyrok vesk tripl zat glurm qorx.",
+                "hidden": true
+            },
+            "file43.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Klot vyrop trim dle sorz zep.",
+                "hidden": false
+            },
+            "file44.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Wrom jembl qlind vort wuf lizo.",
+                "hidden": true
+            },
+            "file45.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Trox wemp sizel qurt vrent mopti.",
+                "hidden": false
+            },
+            "file46.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Frig zor mel drim zalpto kim.",
+                "hidden": true
+            },
+            "file47.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Kepl zot veq filn dre xompli nop.",
+                "hidden": false
+            },
+            "file48.txt": {
+                "type": "text",
+                "size": 26,
+                "data": "Plint krump gel xorz dap.",
+                "hidden": true
+            },
+            "file49.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Glept vort qi minq ven zot klim.",
+                "hidden": false
+            },
+            "file50.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Jeb gork plin xim verql dor.",
+                "hidden": false
+            },
+            "file51.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Xelt burp foin vrit zam trog lo.",
+                "hidden": false
+            },
+            "file52.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Brimp clorpy vink trem gax loy.",
+                "hidden": true
+            },
+            "file53.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Klort pix fem yori vart drem.",
+                "hidden": false
+            },
+            "file54.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Vrop telq zonp jer skrit ply.",
+                "hidden": true
+            },
+            "file55.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Wink glerp zot myn crib vop.",
+                "hidden": false
+            },
+            "file56.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Dext xen prub ralk zin fwor.",
+                "hidden": true
+            },
+            "file57.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Blurx zong klem fry lokt pzo.",
+                "hidden": false
+            },
+            "file58.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Gnim brol sax orty quink pled.",
+                "hidden": true
+            },
+            "file59.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Fropt yert primq zoft cralk.",
+                "hidden": false
+            },
+            "file60.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Wek zonpl drimt blax porf gino.",
+                "hidden": false
+            },
+            "file61.txt": {
+                "type": "text",
+                "size": 41,
+                "data": "Jorp kin zegm fwer kolt dru zap.",
+                "hidden": true
+            },
+            "file62.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Lerp bret zot qworp kra biopt.",
+                "hidden": false
+            },
+            "file63.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Nemp corly flin dex prov zirt.",
+                "hidden": true
+            },
+            "file64.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Slet verx blin zog kwolt breq nat.",
+                "hidden": false
+            },
+            "file65.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Drub yext plorf min trev.",
+                "hidden": true
+            },
+            "file66.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Mep zoften rilk bly trap glec.",
+                "hidden": false
+            },
+            "file67.txt": {
+                "type": "text",
+                "size": 47,
+                "data": "Klint wrop zug kevt bert tol xy qi.",
+                "hidden": true
+            },
+            "file68.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Brip wext klib zoft troq glec bris.",
+                "hidden": false
+            },
+            "file69.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Gler timply brant zoply lurt.",
+                "hidden": false
+            },
+            "file70.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Jilv dorq frem kalp ze fun.",
+                "hidden": true
+            },
+            "file71.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Frig bloqy zonv klerp trom wip gax.",
+                "hidden": false
+            },
+            "file72.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Vept grin slorp tomp blor zirt.",
+                "hidden": true
+            },
+            "file73.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Klom tjer frogt xal jemi tretx za.",
+                "hidden": false
+            },
+            "file74.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Nex drav koch frem linx dor.",
+                "hidden": true
+            },
+            "file75.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Bropt grem wix telq mopk",
+                "hidden": false
+            },
+            "file76.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Lork fimt blim qorp vemp quin.",
+                "hidden": false
+            },
+            "file77.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Klix bron worp frot lir blo.",
+                "hidden": true
+            },
+            "file78.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Vept gril soxi brom klex qum.",
+                "hidden": false
+            },
+            "file79.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Trom bilx qworp lurg blon.",
+                "hidden": false
+            },
+            "file80.txt": {
+                "type": "text",
+                "size": 43,
+                "data": "Blet xin trobt flug vrak glim drez.",
+                "hidden": true
+            },
+            "file81.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Nolk brofn flib murt vek zorn.",
+                "hidden": false
+            },
+            "file82.txt": {
+                "type": "text",
+                "size": 46,
+                "data": "Prig jolt wem fimt korp ze drad wren.",
+                "hidden": true
+            },
+            "file83.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Praz zolm brink vok grerp xi jot.",
+                "hidden": false
+            },
+            "file84.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Ylom gert jot vim troq brek.",
+                "hidden": true
+            },
+            "file85.txt": {
+                "type": "text",
+                "size": 48,
+                "data": "Drip florn blo xi vamp werp gor xim.",
+                "hidden": false
+            },
+            "file86.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Relt trog fit klen zom lert.",
+                "hidden": true
+            },
+            "file87.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Mork vem klorp fren brent xor.",
+                "hidden": false
+            },
+            "file88.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Wek brin qlep trogt zim for len blim.",
+                "hidden": true
+            },
+            "file89.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Grept zalp zum kren brant dol.",
+                "hidden": false
+            },
+            "file90.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Nir bront wem kraj lox grom twor blep.",
+                "hidden": false
+            },
+            "file91.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Prik breq xil kern domp frup.",
+                "hidden": true
+            },
+            "file92.txt": {
+                "type": "text",
+                "size": 49,
+                "data": "Driz wept gril tropt klom denf jop.",
+                "hidden": false
+            },
+            "file93.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Qlor brex finm trosp vlek krep.",
+                "hidden": true
+            },
+            "file94.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Brig xent plix klor drez fimt.",
+                "hidden": false
+            },
+            "file95.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Trimp rel bopq wext krez fimt von.",
+                "hidden": true
+            },
+            "file96.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Drun wepx golt vorx yim koch.",
+                "hidden": false
+            },
+            "file97.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Gerk plet troft pzo xim yol qrat.",
+                "hidden": true
+            },
+            "file98.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Jilk bren prol vort grex xim deno.",
+                "hidden": false
+            },
+            "file99.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Qyot brem trof kilt plar yop.",
+                "hidden": true
+            },
+            "file100.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Xom fleb troz vinp brep glim zarn.",
+                "hidden": false
+            }
+
+        }
+    },
+    {
+        "level":1.2,
+        "directory": {
+            "file1.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Ado lorum zapu kyred sqla mknoi rt.",
+                "hidden": false
+            },
+            "file2.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Yolk trab invo carko we fluhp daz.",
+                "hidden": true
+            },
+            "file3.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Treq vi prokl myter zgurt hy plo.",
+                "hidden": false
+            },
+            "file4.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Ghrip kelmun fas proqupt xyz.",
+                "hidden": true
+            },
+            "file5.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Stiko ronp qerta skaal mop denti.",
+                "hidden": false
+            },
+            "file6.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Dint werg clopo frunt ozimo.",
+                "hidden": true
+            },
+            "file7.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Meq zor fluna kark lem frolp xy.",
+                "hidden": false
+            },
+            "file8.txt": {
+                "type": "text",
+                "size": 27,
+                "data": "Zing krolp ba lom trosp wex.",
+                "hidden": true
+            },
+            "file9.txt": {
+                "type": "text",
+                "size": 43,
+                "data": "Plit vex za krunb yert biot qastor ga.",
+                "hidden": false
+            },
+            "file10.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Lorbit krak mesoth yon wimex.",
+                "hidden": false
+            },
+            "file11.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Treql bemul zopent fy kropt xrui.",
+                "hidden": true
+            },
+            "file12.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Muz zwolk danf quin slert wekla.",
+                "hidden": false
+            },
+            "file13.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Jorly met psym porp grafd lint.",
+                "hidden": true
+            },
+            "file14.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Rocha flink trodol vemp qizmo tzel.",
+                "hidden": false
+            },
+            "file15.txt": {
+                "type": "text",
+                "size": 41,
+                "data": "Qinta jrot wefrud qal zepho vambol.",
+                "hidden": true
+            },
+            "file16.txt": {
+                "type": "text",
+                "size": 57,
+                "data": "ASOASO sasasassas29njw",
+                "hidden": false
+            },
+            "file17.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Klort zan trimb zot lexpor dew git vrixpa.",
+                "hidden": false
+            },
+            "file18.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Cromp veq pilto frant wibz qnap jilo.",
+                "hidden": true
+            },
+            "file19.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Klap yino driz wrold vept xrem tuti.",
+                "hidden": false
+            },
+            "file20.txt": {
+                "type": "text",
+                "size": 47,
+                "data": "Frund vek qert yolm benz wopt zeo drz.",
+                "hidden": true
+            },
+            "file21.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Vi drap tombl zetir qlim jax.",
+                "hidden": false
+            },
+            "file22.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Florn wim zatei bhrot tup nezi.",
+                "hidden": true
+            },
+            "file23.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Sronp ke volem uzni trolg faz.",
+                "hidden": false
+            },
+            "file24.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Prit zolpl varg flut brumi nzer.",
+                "hidden": false
+            },
+            "file25.txt": {
+                "type": "text",
+                "size": 27,
+                "data": "Queld wynor gamt onip slort.",
+                "hidden": true
+            },
+            "file26.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Drak fulem gri zop nit vaq ponk.",
+                "hidden": false
+            },
+            "file27.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Ferq polo xan vet umbi trokd zel.",
+                "hidden": true
+            },
+            "file28.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Broxi qat fermin solq zutp nizg ket.",
+                "hidden": false
+            },
+            "file29.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Mink tox zarto proz fom treqp vle rto.",
+                "hidden": true
+            },
+            "file30.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Vert son kla xwoly pex mron.",
+                "hidden": false
+            },
+            "file31.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Cront vak pix qwerp soz trib.",
+                "hidden": false
+            },
+            "file32.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Fyron gropli vemt kri prozd yolm.",
+                "hidden": true
+            },
+            "file33.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Furt bzep tronq jorl den kiq.",
+                "hidden": false
+            },
+            "file34.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Wex ziop qlant mur kry tze.",
+                "hidden": true
+            },
+            "file35.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Brel doxi curn mimble zoprt crosl.",
+                "hidden": false
+            },
+            "file36.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Grept plun zor kamix nart wexr toi.",
+                "hidden": true
+            },
+            "file37.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Pley ronf gilq tram vrox plint.",
+                "hidden": false
+            },
+            "file38.txt": {
+                "type": "text",
+                "size": 46,
+                "data": "Wrimp zento quarp plisk to minx zel.",
+                "hidden": true
+            },
+            "file39.txt": {
+                "type": "text",
+                "size": 52,
+                "data": "Vorkle trom zark pen wex jot golb.",
+                "hidden": false
+            },
+            "file40.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Klemp dart fo qi vopt nex ply.",
+                "hidden": true
+            },
+            "file41.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Tropt mirm bleex vot glib zex.",
+                "hidden": false
+            },
+            "file42.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Nyrok vesk tripl zat glurm qorx.",
+                "hidden": true
+            },
+            "file43.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Klot vyrop trim dle sorz zep.",
+                "hidden": false
+            },
+            "file44.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Wrom jembl qlind vort wuf lizo.",
+                "hidden": true
+            },
+            "file45.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Trox wemp sizel qurt vrent mopti.",
+                "hidden": false
+            },
+            "file46.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Frig zor mel drim zalpto kim.",
+                "hidden": true
+            },
+            "file47.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Kepl zot veq filn dre xompli nop.",
+                "hidden": false
+            },
+            "file48.txt": {
+                "type": "text",
+                "size": 26,
+                "data": "Plint krump gel xorz dap.",
+                "hidden": true
+            },
+            "file49.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Glept vort qi minq ven zot klim.",
+                "hidden": false
+            },
+            "file50.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Jeb gork plin xim verql dor.",
+                "hidden": false
+            },
+            "file51.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Xelt burp foin vrit zam trog lo.",
+                "hidden": false
+            },
+            "file52.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Brimp clorpy vink trem gax loy.",
+                "hidden": true
+            },
+            "file53.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Klort pix fem yori vart drem.",
+                "hidden": false
+            },
+            "file54.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Vrop telq zonp jer skrit ply.",
+                "hidden": true
+            },
+            "file55.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Wink glerp zot myn crib vop.",
+                "hidden": false
+            },
+            "file56.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Dext xen prub ralk zin fwor.",
+                "hidden": true
+            },
+            "file57.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Blurx zong klem fry lokt pzo.",
+                "hidden": false
+            },
+            "file58.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Gnim brol sax orty quink pled.",
+                "hidden": true
+            },
+            "file59.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Fropt yert primq zoft cralk.",
+                "hidden": false
+            },
+            "file60.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Wek zonpl drimt blax porf gino.",
+                "hidden": false
+            },
+            "file61.txt": {
+                "type": "text",
+                "size": 41,
+                "data": "Jorp kin zegm fwer kolt dru zap.",
+                "hidden": true
+            },
+            "file62.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Lerp bret zot qworp kra biopt.",
+                "hidden": false
+            },
+            "file63.txt": {
+                "type": "text",
+                "size": 14,
+                "data": "This is your flag: ${FLAG}",
+                "hidden": true
+            },
+            "file64.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Slet verx blin zog kwolt breq nat.",
+                "hidden": false
+            },
+            "file65.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Drub yext plorf min trev.",
+                "hidden": true
+            },
+            "file66.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Mep zoften rilk bly trap glec.",
+                "hidden": false
+            },
+            "file67.txt": {
+                "type": "text",
+                "size": 47,
+                "data": "Klint wrop zug kevt bert tol xy qi.",
+                "hidden": true
+            },
+            "file68.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Brip wext klib zoft troq glec bris.",
+                "hidden": false
+            },
+            "file69.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Gler timply brant zoply lurt.",
+                "hidden": false
+            },
+            "file70.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Jilv dorq frem kalp ze fun.",
+                "hidden": true
+            },
+            "file71.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Frig bloqy zonv klerp trom wip gax.",
+                "hidden": false
+            },
+            "file72.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Vept grin slorp tomp blor zirt.",
+                "hidden": true
+            },
+            "file73.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Klom tjer frogt xal jemi tretx za.",
+                "hidden": false
+            },
+            "file74.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Nex drav koch frem linx dor.",
+                "hidden": true
+            },
+            "file75.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Bropt grem wix telq mopk",
+                "hidden": false
+            },
+            "file76.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Lork fimt blim qorp vemp quin.",
+                "hidden": false
+            },
+            "file77.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Klix bron worp frot lir blo.",
+                "hidden": true
+            },
+            "file78.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Vept gril soxi brom klex qum.",
+                "hidden": false
+            },
+            "file79.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Trom bilx qworp lurg blon.",
+                "hidden": false
+            },
+            "file80.txt": {
+                "type": "text",
+                "size": 43,
+                "data": "Blet xin trobt flug vrak glim drez.",
+                "hidden": true
+            },
+            "file81.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Nolk brofn flib murt vek zorn.",
+                "hidden": false
+            },
+            "file82.txt": {
+                "type": "text",
+                "size": 46,
+                "data": "Prig jolt wem fimt korp ze drad wren.",
+                "hidden": true
+            },
+            "file83.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Praz zolm brink vok grerp xi jot.",
+                "hidden": false
+            },
+            "file84.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Ylom gert jot vim troq brek.",
+                "hidden": true
+            },
+            "file85.txt": {
+                "type": "text",
+                "size": 48,
+                "data": "Drip florn blo xi vamp werp gor xim.",
+                "hidden": false
+            },
+            "file86.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Relt trog fit klen zom lert.",
+                "hidden": true
+            },
+            "file87.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Mork vem klorp fren brent xor.",
+                "hidden": false
+            },
+            "file88.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Wek brin qlep trogt zim for len blim.",
+                "hidden": true
+            },
+            "file89.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Grept zalp zum kren brant dol.",
+                "hidden": false
+            },
+            "file90.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Nir bront wem kraj lox grom twor blep.",
+                "hidden": false
+            },
+            "file91.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Prik breq xil kern domp frup.",
+                "hidden": true
+            },
+            "file92.txt": {
+                "type": "text",
+                "size": 49,
+                "data": "Driz wept gril tropt klom denf jop.",
+                "hidden": false
+            },
+            "file93.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Qlor brex finm trosp vlek krep.",
+                "hidden": true
+            },
+            "file94.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Brig xent plix klor drez fimt.",
+                "hidden": false
+            },
+            "file95.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Trimp rel bopq wext krez fimt von.",
+                "hidden": true
+            },
+            "file96.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Drun wepx golt vorx yim koch.",
+                "hidden": false
+            },
+            "file97.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Gerk plet troft pzo xim yol qrat.",
+                "hidden": true
+            },
+            "file98.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Jilk bren prol vort grex xim deno.",
+                "hidden": false
+            },
+            "file99.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Qyot brem trof kilt plar yop.",
+                "hidden": true
+            },
+            "file100.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Xom fleb troz vinp brep glim zarn.",
+                "hidden": false
+            }
+        }
+    },
+    {
+        "level":1.3,
+        "directory": {
+            "file1.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Ado lorum zapu kyred sqla mknoi rt.",
+                "hidden": false
+            },
+            "file2.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Yolk trab invo carko we fluhp daz.",
+                "hidden": true
+            },
+            "file3.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Treq vi prokl myter zgurt hy plo.",
+                "hidden": false
+            },
+            "file4.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Ghrip kelmun fas proqupt xyz.",
+                "hidden": true
+            },
+            "file5.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Stiko ronp qerta skaal mop denti.",
+                "hidden": false
+            },
+            "file6.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Dint werg clopo frunt ozimo.",
+                "hidden": true
+            },
+            "file7.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Meq zor fluna kark lem frolp xy.",
+                "hidden": false
+            },
+            "file8.txt": {
+                "type": "text",
+                "size": 27,
+                "data": "Zing krolp ba lom trosp wex.",
+                "hidden": true
+            },
+            "file9.txt": {
+                "type": "text",
+                "size": 43,
+                "data": "Plit vex za krunb yert biot qastor ga.",
+                "hidden": false
+            },
+            "file10.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Lorbit krak mesoth yon wimex.",
+                "hidden": false
+            },
+            "file11.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Treql bemul zopent fy kropt xrui.",
+                "hidden": true
+            },
+            "file12.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Muz zwolk danf quin slert wekla.",
+                "hidden": false
+            },
+            "file13.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Jorly met psym porp grafd lint.",
+                "hidden": true
+            },
+            "file14.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Rocha flink trodol vemp qizmo tzel.",
+                "hidden": false
+            },
+            "file15.txt": {
+                "type": "text",
+                "size": 41,
+                "data": "Qinta jrot wefrud qal zepho vambol.",
+                "hidden": true
+            },
+            "file16.txt": {
+                "type": "text",
+                "size": 57,
+                "data": "ASOASO sasasassas29njw",
+                "hidden": false
+            },
+            "file17.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Klort zan trimb zot lexpor dew git vrixpa.",
+                "hidden": false
+            },
+            "file18.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Cromp veq pilto frant wibz qnap jilo.",
+                "hidden": true
+            },
+            "file19.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Klap yino driz wrold vept xrem tuti.",
+                "hidden": false
+            },
+            "file20.txt": {
+                "type": "text",
+                "size": 47,
+                "data": "Frund vek qert yolm benz wopt zeo drz.",
+                "hidden": true
+            },
+            "file21.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Vi drap tombl zetir qlim jax.",
+                "hidden": false
+            },
+            "file22.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Florn wim zatei bhrot tup nezi.",
+                "hidden": true
+            },
+            "file23.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Sronp ke volem uzni trolg faz.",
+                "hidden": false
+            },
+            "file24.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Prit zolpl varg flut brumi nzer.",
+                "hidden": false
+            },
+            "file25.txt": {
+                "type": "text",
+                "size": 27,
+                "data": "Queld wynor gamt onip slort.",
+                "hidden": true
+            },
+            "file26.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Drak fulem gri zop nit vaq ponk.",
+                "hidden": false
+            },
+            "file27.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Ferq polo xan vet umbi trokd zel.",
+                "hidden": true
+            },
+            "file28.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Broxi qat fermin solq zutp nizg ket.",
+                "hidden": false
+            },
+            "file29.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Mink tox zarto proz fom treqp vle rto.",
+                "hidden": true
+            },
+            "file30.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Vert son kla xwoly pex mron.",
+                "hidden": false
+            },
+            "file31.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Cront vak pix qwerp soz trib.",
+                "hidden": false
+            },
+            "file32.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Fyron gropli vemt kri prozd yolm.",
+                "hidden": true
+            },
+            "file33.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Furt bzep tronq jorl den kiq.",
+                "hidden": false
+            },
+            "file34.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Wex ziop qlant mur kry tze.",
+                "hidden": true
+            },
+            "file35.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Brel doxi curn mimble zoprt crosl.",
+                "hidden": false
+            },
+            "file36.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Grept plun zor kamix nart wexr toi.",
+                "hidden": true
+            },
+            "file37.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Pley ronf gilq tram vrox plint.",
+                "hidden": false
+            },
+            "file38.txt": {
+                "type": "text",
+                "size": 46,
+                "data": "Wrimp zento quarp plisk to minx zel.",
+                "hidden": true
+            },
+            "file39.txt": {
+                "type": "text",
+                "size": 52,
+                "data": "Vorkle trom zark pen wex jot golb.",
+                "hidden": false
+            },
+            "file40.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Klemp dart fo qi vopt nex ply.",
+                "hidden": true
+            },
+            "file41.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Tropt mirm bleex vot glib zex.",
+                "hidden": false
+            },
+            "file42.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Nyrok vesk tripl zat glurm qorx.",
+                "hidden": true
+            },
+            "file43.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Klot vyrop trim dle sorz zep.",
+                "hidden": false
+            },
+            "file44.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Wrom jembl qlind vort wuf lizo.",
+                "hidden": true
+            },
+            "file45.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Trox wemp sizel qurt vrent mopti.",
+                "hidden": false
+            },
+            "file46.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Frig zor mel drim zalpto kim.",
+                "hidden": true
+            },
+            "file47.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Kepl zot veq filn dre xompli nop.",
+                "hidden": false
+            },
+            "file48.txt": {
+                "type": "text",
+                "size": 26,
+                "data": "Plint krump gel xorz dap.",
+                "hidden": true
+            },
+            "file49.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Glept vort qi minq ven zot klim.",
+                "hidden": false
+            },
+            "file50.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Jeb gork plin xim verql dor.",
+                "hidden": false
+            },
+            "file51.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Xelt burp foin vrit zam trog lo.",
+                "hidden": false
+            },
+            "file52.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Brimp clorpy vink trem gax loy.",
+                "hidden": true
+            },
+            "file53.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Klort pix fem yori vart drem.",
+                "hidden": false
+            },
+            "file54.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Vrop telq zonp jer skrit ply.",
+                "hidden": true
+            },
+            "file55.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Wink glerp zot myn crib vop.",
+                "hidden": false
+            },
+            "file56.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Dext xen prub ralk zin fwor.",
+                "hidden": true
+            },
+            "file57.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Blurx zong klem fry lokt pzo.",
+                "hidden": false
+            },
+            "file58.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Gnim brol sax orty quink pled.",
+                "hidden": true
+            },
+            "file59.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Fropt yert primq zoft cralk.",
+                "hidden": false
+            },
+            "file60.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Wek zonpl drimt blax porf gino.",
+                "hidden": false
+            },
+            "file61.txt": {
+                "type": "text",
+                "size": 41,
+                "data": "Jorp kin zegm fwer kolt dru zap.",
+                "hidden": true
+            },
+            "file62.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Lerp bret zot qworp kra biopt.",
+                "hidden": false
+            },
+            "file63.txt": {
+                "type": "text",
+                "size": 63,
+                "data": "Lerp bret zot qworp kra biopt.",
+                "hidden": true
+            },
+            "file64.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Slet verx blin zog kwolt breq nat.",
+                "hidden": false
+            },
+            "file65.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Drub yext plorf min trev.",
+                "hidden": true
+            },
+            "file66.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Mep zoften rilk bly trap glec.",
+                "hidden": false
+            },
+            "file67.txt": {
+                "type": "text",
+                "size": 47,
+                "data": "Klint wrop zug kevt bert tol xy qi.",
+                "hidden": true
+            },
+            "file68.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Brip wext klib zoft troq glec bris.",
+                "hidden": false
+            },
+            "file69.txt": {
+                "type": "text",
+                "size": 30,
+                "data": "Gler timply brant zoply lurt.",
+                "hidden": false
+            },
+            "file70.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Jilv dorq frem kalp ze fun.",
+                "hidden": true
+            },
+            "file71.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Frig bloqy zonv klerp trom wip gax.",
+                "hidden": false
+            },
+            "file72.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Vept grin slorp tomp blor zirt.",
+                "hidden": true
+            },
+            "file73.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Klom tjer frogt xal jemi tretx za.",
+                "hidden": false
+            },
+            "file74.txt": {
+                "type": "text",
+                "size": 28,
+                "data": "Nex drav koch frem linx dor.",
+                "hidden": true
+            },
+            "file75.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Bropt grem wix telq mopk",
+                "hidden": false
+            },
+            "file76.txt": {
+                "type": "text",
+                "size": 36,
+                "data": "Lork fimt blim qorp vemp quin.",
+                "hidden": false
+            },
+            "file77.txt": {
+                "type": "text",
+                "size": 14,
+                "data": "This is your flag: ${FLAG}",
+                "hidden": true
+            },
+            "file78.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Vept gril soxi brom klex qum.",
+                "hidden": false
+            },
+            "file79.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Trom bilx qworp lurg blon.",
+                "hidden": false
+            },
+            "file80.txt": {
+                "type": "text",
+                "size": 43,
+                "data": "Blet xin trobt flug vrak glim drez.",
+                "hidden": true
+            },
+            "file81.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Nolk brofn flib murt vek zorn.",
+                "hidden": false
+            },
+            "file82.txt": {
+                "type": "text",
+                "size": 46,
+                "data": "Prig jolt wem fimt korp ze drad wren.",
+                "hidden": true
+            },
+            "file83.txt": {
+                "type": "text",
+                "size": 40,
+                "data": "Praz zolm brink vok grerp xi jot.",
+                "hidden": false
+            },
+            "file84.txt": {
+                "type": "text",
+                "size": 39,
+                "data": "Ylom gert jot vim troq brek.",
+                "hidden": true
+            },
+            "file85.txt": {
+                "type": "text",
+                "size": 48,
+                "data": "Drip florn blo xi vamp werp gor xim.",
+                "hidden": false
+            },
+            "file86.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Relt trog fit klen zom lert.",
+                "hidden": true
+            },
+            "file87.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Mork vem klorp fren brent xor.",
+                "hidden": false
+            },
+            "file88.txt": {
+                "type": "text",
+                "size": 45,
+                "data": "Wek brin qlep trogt zim for len blim.",
+                "hidden": true
+            },
+            "file89.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Grept zalp zum kren brant dol.",
+                "hidden": false
+            },
+            "file90.txt": {
+                "type": "text",
+                "size": 50,
+                "data": "Nir bront wem kraj lox grom twor blep.",
+                "hidden": false
+            },
+            "file91.txt": {
+                "type": "text",
+                "size": 34,
+                "data": "Prik breq xil kern domp frup.",
+                "hidden": true
+            },
+            "file92.txt": {
+                "type": "text",
+                "size": 49,
+                "data": "Driz wept gril tropt klom denf jop.",
+                "hidden": false
+            },
+            "file93.txt": {
+                "type": "text",
+                "size": 31,
+                "data": "Qlor brex finm trosp vlek krep.",
+                "hidden": true
+            },
+            "file94.txt": {
+                "type": "text",
+                "size": 32,
+                "data": "Brig xent plix klor drez fimt.",
+                "hidden": false
+            },
+            "file95.txt": {
+                "type": "text",
+                "size": 42,
+                "data": "Trimp rel bopq wext krez fimt von.",
+                "hidden": true
+            },
+            "file96.txt": {
+                "type": "text",
+                "size": 35,
+                "data": "Drun wepx golt vorx yim koch.",
+                "hidden": false
+            },
+            "file97.txt": {
+                "type": "text",
+                "size": 37,
+                "data": "Gerk plet troft pzo xim yol qrat.",
+                "hidden": true
+            },
+            "file98.txt": {
+                "type": "text",
+                "size": 44,
+                "data": "Jilk bren prol vort grex xim deno.",
+                "hidden": false
+            },
+            "file99.txt": {
+                "type": "text",
+                "size": 29,
+                "data": "Qyot brem trof kilt plar yop.",
+                "hidden": true
+            },
+            "file100.txt": {
+                "type": "text",
+                "size": 38,
+                "data": "Xom fleb troz vinp brep glim zarn.",
+                "hidden": false
+            }
+
+        }
+    },
+    {
         "level": 2,
         "directory": {            "hello.txt": {
             "type": "text",
