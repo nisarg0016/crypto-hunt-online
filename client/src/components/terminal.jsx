@@ -69,7 +69,14 @@ const Terminal = () => {
 
   useEffect(() => {
     levelDetails();
+
   }, []);
+  
+  useEffect(() => {
+    if (dispLevel > 5){
+      setDispLevel("You are done! Get out!");
+    }
+  }, [dispLevel]);
 
   // useEffect(() => {
   //   console.log(dispLevel,level);
