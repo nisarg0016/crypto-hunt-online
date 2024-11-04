@@ -1845,8 +1845,9 @@
         }
     },
     {
-        "level": 2,
-        "directory": {            "hello.txt": {
+        "level": 2.1,
+        "directory": {            
+            "hello.txt": {
             "type": "text",
             "size": 33,
             "data": "Welcome to CrypticHunt Online CTF! This is level 2.",
@@ -1864,6 +1865,73 @@
                 "hidden": false
             },
             "type": "dir",
+            "size": 22,
+            "hidden": false
+        },
+        "README" : {
+            "data": "In this level, you will be needed to retrieve your flag which is split into 2 files. 1st part in a hidden file and 2nd part in a file starting with -.",
+            "type": "text",
+            "size": 40,
+            "hidden": false
+        }}
+    },
+    {
+        "level": 2.2,
+        "directory": {            
+            "hello.txt": {
+            "type": "text",
+            "size": 33,
+            "data": "Welcome to CrypticHunt Online CTF! This is level 2.",
+            "hidden": false
+        },
+        "home": {
+            "type": "dir",
+            "size": 22,
+            "hidden": false
+        },        
+        "cryptic": {
+            ".flag.txt": {
+                "type": "text",
+                "size": 22,
+                "hidden": true
+            },
+            "-flag.txt": {
+                "type": "text",
+                "size": 22,
+                "hidden": false
+            },
+            "type": "dir",
+            "size": 22,
+            "hidden": false
+        },
+        "README" : {
+            "data": "In this level, you will be needed to retrieve your flag which is split into 2 files. 1st part in a hidden file and 2nd part in a file starting with -.",
+            "type": "text",
+            "size": 40,
+            "hidden": false
+        }}
+    },
+    {
+        "level": 2.3,
+        "directory": {            
+            "hello.txt": {
+            "type": "text",
+            "size": 33,
+            "data": "Welcome to CrypticHunt Online CTF! This is level 2.",
+            "hidden": false
+        },
+        "home": {
+            "type": "dir",
+            "size": 22,
+            "hidden": false
+        },
+        ".flag.txt": {
+            "type": "text",
+            "size": 22,
+            "hidden": true
+        },
+        "-flag.txt": {
+            "type": "text",
             "size": 22,
             "hidden": false
         },
