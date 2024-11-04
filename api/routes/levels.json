@@ -2863,7 +2863,7 @@
                 "hidden": false
             },
             "README" : {
-                "data": "Try asking for help from the computer.",
+                "data": "The ending might seem unusual, with characters like ‘=’ keeping everything balanced and basic.",
                 "type": "text",
                 "size": 40,
                 "hidden": false
@@ -2898,7 +2898,7 @@
             },
             
             "README" : {
-                "data": "Try asking for help from the computer.",
+                "data": "The ending might seem unusual, with characters like ‘=’ keeping everything balanced and basic.",
                 "type": "text",
                 "size": 40,
                 "hidden": false
@@ -2950,7 +2950,7 @@
             },
             
             "README" : {
-                "data": "Try asking for help from the computer.",
+                "data": "The ending might seem unusual, with characters like ‘=’ keeping everything balanced and basic.",
                 "type": "text",
                 "size": 40,
                 "hidden": false
