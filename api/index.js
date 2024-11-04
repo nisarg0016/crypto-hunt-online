@@ -133,7 +133,7 @@ app.post("/execute", async (req, res) => {
             } else {
                 directoryStruct = {}; 
             }
-            if (level === 2) {
+            if (Math.floor(level) === 2) {
                 const splitPoint = Math.ceil(flag.length / 2);
                 const flag1 = flag.slice(0, splitPoint);
                 const flag2 = flag.slice(splitPoint);
