@@ -3042,7 +3042,7 @@
                 },
                 "type": "dir",
                 "size": 22,
-                "hidden": false
+                "hidden": true
             },
             "home": {
                 "flag.txt": {

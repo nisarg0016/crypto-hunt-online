@@ -30,6 +30,43 @@ function lsCommand(args, currentPath, dirStructure) {
     return output;
 }
 
+function recursiveOutput(args, out, home, tabs) {
+    let struct = Object.keys(home);
+    for (i in struct) {
+        if (home[struct[i]].type == "dir") {
+            let temp = home[struct[i]];
+
+            if (
+                struct[i] == "hidden" ||
+                struct[i] == "size" ||
+                struct[i] == "type"
+            ) continue;
+            //out += `${struct[i]}    `;
+            let obj = {
+                props: struct[i],
+                name: struct[i]
+            };
+
+            out.push(obj);
+            out.push(recursiveOutput(args, out, temp, tabs + 1));
+        } else{
+            if (
+                struct[i] == "hidden" ||
+                struct[i] == "size" ||
+                struct[i] == "type"
+            ) continue;
+            //out += `${struct[i]}    `;
+            let obj = {
+                props: struct[i],
+                name: struct[i]
+            };
+
+            out.push(obj);
+        }
+    }
+    return out;
+}
+
 function bigArrGenerator(args, home) {
     let theArr = [];
     if (args.a == false) {
@@ -42,7 +79,18 @@ function bigArrGenerator(args, home) {
         home = newHome;
     }
     if (args.R == true) {
-        theArr.concat(recursiveOutput(args, theArr, home, 0));
+        let struct = Object.keys(home);
+        if (
+            struct[i] == "hidden" ||
+            struct[i] == "size" ||
+            struct[i] == "type"
+        ) return;
+        let obj = {
+            props: home[struct[i]],
+            name: struct[i]
+        };
+        theArr.push(obj);
+        theArr.push(recursiveOutput(args, theArr, home, 0));
     } else {
         let struct = Object.keys(home);
         for (i in struct) {
@@ -82,31 +130,11 @@ function outputGenerator(args, home) {
         arr = arr.reverse();
     }
     for (let i in arr) {
-        out += `${arr[i].name}    `;
-    }
-    return out;
-}
-
-function recursiveOutput(args, out, home, tabs) {
-    let struct = Object.keys(home);
-    for (i in struct) {
-        if (home[struct[i]].type == "dir") {
-            let temp = home[struct[i]];
-            out += '\n';
-            for (let i = 0; i < tabs + 1; i++) out += "  ";
-            out += `${struct[i]}:\n`;
-            for (let i = 0; i < tabs + 1; i++) out += "  ";
-            out = recursiveOutput(args, out, temp, tabs + 1);
-        } else{
-            if (
-                struct[i] == "hidden" ||
-                struct[i] == "size" ||
-                struct[i] == "type"
-            ) continue;
-            out += `${struct[i]}    `;
+        if (arr[i].name != undefined) {
+            out += `${arr[i].name}    `;
         }
     }
-    out += '\n';
+
     return out;
 }
 

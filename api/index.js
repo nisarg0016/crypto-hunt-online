@@ -134,7 +134,7 @@ app.post("/execute", async (req, res) => {
             } else {
                 directoryStruct = {}; 
             }
-            if (Math.floor(level) === 2) {
+            if (level === 2.1) {
                 const splitPoint = Math.ceil(flag.length / 2);
                 const flag1 = flag.slice(0, splitPoint);
                 const flag2 = flag.slice(splitPoint);
@@ -143,6 +143,32 @@ app.post("/execute", async (req, res) => {
                 }
                 if (directoryStruct.home["-flag.txt"]) {
                     directoryStruct.home["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                }
+            }
+
+            if (level === 2.2) {
+                const splitPoint = Math.ceil(flag.length / 2);
+                const flag1 = flag.slice(0, splitPoint);
+                const flag2 = flag.slice(splitPoint);
+
+                if (directoryStruct.cryptic[".flag.txt"]) {
+                    directoryStruct[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                }
+                if (directoryStruct.cryptic["-flag.txt"]) {
+                    directoryStruct["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                }
+            }
+
+            if (level === 2.3) {
+                const splitPoint = Math.ceil(flag.length / 2);
+                const flag1 = flag.slice(0, splitPoint);
+                const flag2 = flag.slice(splitPoint);
+
+                if (directoryStruct[".flag.txt"]) {
+                    directoryStruct[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                }
+                if (directoryStruct["-flag.txt"]) {
+                    directoryStruct["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
                 }
             }
         } catch (error) {
@@ -182,6 +208,8 @@ app.post("/execute", async (req, res) => {
                 output = grep.grep2(command.args[0], input, path, directoryStruct);
             } else if (command.command === 'base64') {
                 output = base64.base64Command(command.args, path, directoryStruct,flag);
+            } else {
+                output = `${command.command}: Not found`
             }
             if (output != null) {
                 input = output.trimEnd();
