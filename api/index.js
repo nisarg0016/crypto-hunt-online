@@ -152,10 +152,10 @@ app.post("/execute", async (req, res) => {
                 const flag2 = flag.slice(splitPoint);
 
                 if (directoryStruct.cryptic[".flag.txt"]) {
-                    directoryStruct[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                    directoryStruct.cryptic[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
                 }
                 if (directoryStruct.cryptic["-flag.txt"]) {
-                    directoryStruct["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                    directoryStruct.cryptic["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
                 }
             }
 
