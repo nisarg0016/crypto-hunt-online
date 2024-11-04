@@ -1943,6 +1943,815 @@
         }}
     },
     {
+        "level": 3.1,
+        "directory": {
+            "hello.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Welcome to CrypticHunt Online CTF! This is level 3.",
+                "hidden": false
+            },
+            "folder1": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder2": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder3": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder4": {
+    
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder5": {
+                
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder6": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder7": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor st amet"
+                    },
+                    "this file has spaces in the name": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "executable": false,
+                        "data": "This is your flag: ${FLAG}"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder8": {
+
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder9": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder10": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "README": {
+                "type": "text",
+                "size": 40,
+                "hidden": false,
+                "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
+            }
+        }
+    },
+    {
+        "level": 3.2,
+        "directory": {
+            "hello.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Welcome to CrypticHunt Online CTF! This is level 3.",
+                "hidden": false
+            },
+            "folder1": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder2": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder3": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder4": {
+    
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder5": {
+                
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder6": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder7": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor st amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder8": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder9": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "this file has spaces in the name": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "executable": false,
+                        "data": "This is your flag: ${FLAG}"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder10": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "README": {
+                "type": "text",
+                "size": 40,
+                "hidden": false,
+                "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
+            }
+        }
+    },
+    {
+        "level": 3.3,
+        "directory": {
+            "hello.txt": {
+                "type": "text",
+                "size": 33,
+                "data": "Welcome to CrypticHunt Online CTF! This is level 3.",
+                "hidden": false
+            },
+            "folder1": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder2": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder3": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder4": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder5": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "this file has spaces in the name": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "executable": false,
+                        "data": "This is your flag: ${FLAG}"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder6": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder7": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor st amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder8": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder9": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "folder10": {
+                "subfolder1": {
+                    "file1.txt": {
+                        "type": "text",
+                        "size": 10,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    },
+                    "file2.txt": {
+                        "type": "text",
+                        "size": 30,
+                        "hidden": false,
+                        "data": "Lorem ipsum dolor sit amet"
+                    }
+                },
+                "file1.txt": {
+                    "type": "text",
+                    "size": 10,
+                    "hidden": false,
+                    "data": "Lorem ipsum dolor sit amet"
+                },
+                "type": "dir",
+                "size": 40,
+                "hidden": false
+            },
+            "README": {
+                "type": "text",
+                "size": 40,
+                "hidden": false,
+                "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
+            }
+        }
+    },
+    {
         "level":5.1,
         "directory":{
             "hello.txt": {
