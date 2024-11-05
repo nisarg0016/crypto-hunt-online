@@ -40,9 +40,12 @@ module.exports = function () {
                     levels: generateRandomSet() 
                 });
 
+                console.log("Here");
+
                 await newUser.save();
                 return done(null, { user: newUser, accessToken: accessToken });
             } else {
+                console.log("Some issue");
                 return done(null, false, { message: "Please login with only student email" });
             }
         }));
