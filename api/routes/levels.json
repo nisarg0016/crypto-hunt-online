@@ -2254,7 +2254,7 @@
                 "type": "text",
                 "size": 40,
                 "hidden": false,
-                "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
+                "data": "Hidden within the maze of folders is a file with spaces in its name. Track down this elusive, non-executable file to uncover your flag!"
             }
         }
     },
@@ -2552,7 +2552,7 @@
                 "type": "text",
                 "size": 40,
                 "hidden": false,
-                "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
+                "data": "Hidden within the maze of folders is a file with spaces in its name. Track down this elusive, non-executable file to uncover your flag!"
             }
         }
     },    
@@ -2850,7 +2850,7 @@
                 "type": "text",
                 "size": 40,
                 "hidden": false,
-                "data": "Locate a non-executable file named 'this file has spaces in the name' across multiple folders. This file contains your flag."
+                "data": "Hidden within the maze of folders is a file with spaces in its name. Track down this elusive, non-executable file to uncover your flag!"
             }
         }
     },    
