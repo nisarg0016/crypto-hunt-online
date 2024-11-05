@@ -60,7 +60,7 @@ app.post("/command", (req, res) => {
 /* Ignore this, authentication stuff */
 app.get("/login/success", (req, res) => {
     if (req.user) {
-        res.redirect("http://localhost:3000/")
+        res.redirect(`${process.env.CLIENT_URL}`)
     } else {
         res.status(403).json({ error: true, message: "Not Authorized" });
     }
@@ -79,7 +79,7 @@ app.get("/auth/google/",
 )
 
 app.get('/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: 'http://localhost:3000/' }),
+    passport.authenticate('google', { failureRedirect: `${process.env.CLIENT_URL}` }),
     (req, res) => {
         res.redirect("/login/success")
     }
@@ -92,7 +92,7 @@ app.get('/user', (req, res) => {
 
 app.get('/logout', (req, res) => {
     req.logout(() => {
-        res.redirect("http://localhost:3000/");
+        res.redirect(`${process.env.CLIENT_URL}`);
     });
 });
 
