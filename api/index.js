@@ -20,6 +20,10 @@ dotenv.config();
 mongoose.connect(process.env.mongo_link);
 
 app.use(session({
+    cookie:{
+        secure: true,
+        maxAge:60000
+    },
     secret: 'my-secret-key',
     resave: true,
     saveUninitialized: false,
