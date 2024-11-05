@@ -30,9 +30,8 @@ app.use(session({
 
 
 app.use(
-    cors(
-        {
-        origin: "http://localhost:3000",
+    cors({
+        origin: process.env.CLIENT_URL,
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }

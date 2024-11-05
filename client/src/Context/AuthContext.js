@@ -10,7 +10,7 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const authenticateWithPassport = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/user", {withCredentials: true,});
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`, {withCredentials: true,});
         setUserDetails(response.data === "" ? null : response.data.user)
         setComplete(true);
       } catch (error) {

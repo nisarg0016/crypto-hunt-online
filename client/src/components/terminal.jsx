@@ -57,7 +57,7 @@ const Terminal = () => {
   async function levelDetails() {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/levels/get-level-details/${userDetails._id}`
+        `${process.env.REACT_APP_SERVER_URL}/api/levels/get-level-details/${userDetails._id}`
       );
       setDispLevel(response.data.levelNo);
       setLevel(response.data.level);
@@ -74,6 +74,7 @@ const Terminal = () => {
   
   useEffect(() => {
     if (dispLevel > 5){
+      console.log(process.env.REACT_APP_SERVER_URL)
       setDispLevel("You are done! Get out!");
     }
   }, [dispLevel]);
@@ -91,7 +92,7 @@ const Terminal = () => {
       return;
     }
     let args;
-    const resp = await fetch("http://localhost:8000/execute", {
+    const resp = await fetch(`${process.env.REACT_APP_SERVER_URL}/execute`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -211,7 +212,7 @@ const Terminal = () => {
   };
 
   const logout = () => {
-    window.location.href = "http://localhost:8000/logout";
+    window.location.href = `${process.env.REACT_APP_SERVER_URL}/logout`;
   };
 
   return (
