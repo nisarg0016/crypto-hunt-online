@@ -66,6 +66,7 @@ app.get("/login/success", (req, res) => {
     if (req.user) {
         console.log("Login success!");
         console.log(req.user);
+        console.log("session",req.session)
         res.redirect(`${process.env.CLIENT_URL}`)
     } else {
         res.status(403).json({ error: true, message: "Not Authorized" });
@@ -92,7 +93,8 @@ app.get('/auth/google/callback',
 )
 
 app.get('/user', (req, res) => {
-    console.log(req.user)
+    console.log(req.user);
+    console.log("session",req.session)
     res.status(200).send(req.user)
 })
 
