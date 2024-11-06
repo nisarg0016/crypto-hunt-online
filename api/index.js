@@ -22,13 +22,14 @@ mongoose.connect(process.env.mongo_link);
 
 app.use(session({
     cookie:{
+        secure:true,
         maxAge:86400000
     },
     store: new MemoryStore({
     checkPeriod: 86400000 // prune expired entries every 24h
     }),
     secret: 'my-secret-key',
-    resave: false,
+    resave: true,
     saveUninitialized: false,
 }));
 
