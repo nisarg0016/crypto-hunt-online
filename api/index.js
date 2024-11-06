@@ -65,6 +65,7 @@ app.post("/command", (req, res) => {
 app.get("/login/success", (req, res) => {
     if (req.user) {
         console.log("Login success!");
+        console.log(req.user);
         res.redirect(`${process.env.CLIENT_URL}`)
     } else {
         res.status(403).json({ error: true, message: "Not Authorized" });
