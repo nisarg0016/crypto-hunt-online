@@ -18,7 +18,14 @@ const fs = require("fs");
 const cors = require("cors");
 dotenv.config();
 
-mongoose.connect(process.env.mongo_link);
+mongoose.connect(process.env.mongo_link,
+    {
+        useNewUrlParser: true,
+    useUnifiedTopology: true,
+    connectTimeoutMS: 10000, // 10 seconds
+    socketTimeoutMS: 10000, // 10 seconds
+    }
+);
 
 app.use(session({
     cookie:{
