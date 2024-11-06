@@ -24,6 +24,7 @@ mongoose.connect(process.env.mongo_link,
     useUnifiedTopology: true,
     connectTimeoutMS: 10000, // 10 seconds
     socketTimeoutMS: 10000, // 10 seconds
+    retryWrites: true, 
     }
 );
 
