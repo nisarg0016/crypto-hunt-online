@@ -9,6 +9,7 @@ const grep = require("./commands/grep.js");
 const base64 = require("./commands/base64.js");
 const passport = require("passport");
 const session = require("express-session");
+const MemoryStore = require('memorystore')(session)
 const app = express();
 const passportSetup = require("./passport-setup");
 const User = require("./models/User")
@@ -21,15 +22,14 @@ mongoose.connect(process.env.mongo_link);
 
 app.use(session({
     cookie:{
-        secure: true,
-        maxAge:60000
+        maxAge:86400000
     },
+    store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+    }),
     secret: 'my-secret-key',
-    resave: true,
+    resave: false,
     saveUninitialized: false,
-    cookie: {
-        secure: false
-    },
 }));
 
 app.use(
