@@ -22,15 +22,14 @@ mongoose.connect(process.env.mongo_link);
 
 app.use(session({
     cookie:{
-        secure: true,
-        httpOnly: false,
-        sameSite: 'none'
+        maxAge:86400000
     },
+    store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+    }),
     secret: 'my-secret-key',
     resave: false,
     saveUninitialized: false,
-    proxy: true,
-    name: "cryptoHuntCoookieName"
 }));
 
 app.use(

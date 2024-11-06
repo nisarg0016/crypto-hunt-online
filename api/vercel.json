@@ -2,17 +2,29 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.js",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
+      "src": "/auth/google/callback",
+      "status": 307,
+      "dest": "/auth/google/callback"
+    },
+    {
+      "src": "/login/success",
+      "status": 307,
+      "dest": "/login/success"
+    },
+    {
+      "src": "/auth/google/failed",
+      "status": 307,
+      "dest": "/auth/google/failed"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/server.js"
     }
-  ],
-  {
-    r
-  }
+  ]
 }
