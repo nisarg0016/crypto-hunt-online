@@ -9,7 +9,7 @@ const grep = require("./commands/grep.js");
 const base64 = require("./commands/base64.js");
 const passport = require("passport");
 const session = require("express-session");
-const MemoryStore = require('memorystore')(session)
+const MongoStore = require("connect-mongo");
 const app = express();
 const passportSetup = require("./passport-setup");
 const User = require("./models/User")
@@ -18,28 +18,21 @@ const fs = require("fs");
 const cors = require("cors");
 dotenv.config();
 
-mongoose.connect(process.env.mongo_link,
-    {
-        useNewUrlParser: true,
-    useUnifiedTopology: true,
-    connectTimeoutMS: 10000, // 10 seconds
-    socketTimeoutMS: 10000, // 10 seconds
-    retryWrites: true, 
-    }
-);
+mongoose.connect(process.env.mongo_link);
 
 app.use(session({
-    cookie:{
-        maxAge:86400000
+    cookie: {
+        maxAge: 86400000 // 24 hours
     },
-    store: new MemoryStore({
-    checkPeriod: 86400000 // prune expired entries every 24h
+    store: MongoStore.create({
+        mongoUrl: process.env.mongo_link, // Use your MongoDB connection URL
+        collectionName: "sessions", // Name of the collection to store sessions in
+        ttl: 24 * 60 * 60, // Session TTL in seconds (24 hours)
     }),
     secret: 'my-secret-key',
     resave: false,
     saveUninitialized: false,
 }));
-
 app.use(
     cors({
         origin: process.env.CLIENT_URL,
