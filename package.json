@@ -1,9 +1,10 @@
 {
   "name": "crypto-hunt-online",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "install-server": "cd api && npm install",
     "start-server": "cd api && npm start",
     "install-client": "cd client && npm install",
@@ -12,5 +13,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "react-scripts": "^5.0.1"
+  }
 }
