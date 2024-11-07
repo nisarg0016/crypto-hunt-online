@@ -30,17 +30,28 @@ router.get("/get-level-details/:userId", async(req, res) => {
         }
 
         const flags = userLevelDetails.flags;
-        const levels = userLevelDetails.levelFinished;
+        const levelFinished = userLevelDetails.levelFinished;
+        const levels = userLevelDetails.levels;
 
-        let atLevel;
-        for (let i = 0; i < levels.length; i++) {
-            if (!levels[i]) {
-                atLevel = i + 1;
+        // console.log(levelFinished, levels);
+
+
+        let atLevel = 0;
+        for (let i = 0; i < levelFinished.length; i++) {
+            if (!levelFinished[i]) {
+                atLevel = i;
                 break;
             }
         }
 
-        return res.status(200).send({levelNo: atLevel, flag: flags[atLevel - 1]});
+        // const levelExists = await Level.findOne({
+        //     level: atLevel
+        // })
+
+        // if (!levelExists) {
+        //     return res.status(404).send("This level does not exist");
+        // }
+        return res.status(200).send({levelNo: atLevel,level: levels[atLevel], flag: flags[atLevel]});
     } catch (error) {
         return res.status(500).send(error);
     }
@@ -72,9 +83,9 @@ router.post("/update-level/", async(req, res) => {
         /// update the boolean array
         await User.updateOne(
             { _id: userId },
-            { $set: { [`levelFinished.${levelIndex - 1}`]: true } }
+            { $set: { [`levelFinished.${levelIndex}`]: true } }
         )
-
+        
         return res.status(200).send("You have passed this level!");
     } catch (error) {
         console.log(error);

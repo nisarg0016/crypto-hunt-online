@@ -53,11 +53,8 @@ function grep2(pattern,text,currentPath,dirStructure){
     const lines = text.split('\n');
     const matchingLines = [];
     for(let line of lines){
-        const words = line.split(' ');
-        for(let word of words){
-            if (word === pattern || word === pattern + '.' || word == pattern + ',' || word === '!'){
-                matchingLines.push(line);
-            }
+        if (line.indexOf(pattern) !== -1) {
+            matchingLines.push(line);
         }
     }
     return matchingLines.length > 0 ? matchingLines.join('\n') : `grep: No matching lines found`;

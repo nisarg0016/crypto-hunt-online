@@ -16,6 +16,9 @@ const userSchema = new mongoose.Schema({
     }],
     levelFinished: [{
         type: Boolean
+    }],
+    levels:[{
+        type: Number
     }]
 })
 

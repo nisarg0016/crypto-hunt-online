@@ -6,8 +6,10 @@ const cat = require("./commands/cat.js")
 const find = require("./commands/find.js")
 const dotenv = require("dotenv");
 const grep = require("./commands/grep.js");
+const base64 = require("./commands/base64.js");
 const passport = require("passport");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const app = express();
 const passportSetup = require("./passport-setup");
 const User = require("./models/User")
@@ -19,19 +21,21 @@ dotenv.config();
 mongoose.connect(process.env.mongo_link);
 
 app.use(session({
-    secret: 'my-secret-key',
-    resave: true,
-    saveUninitialized: false,
     cookie: {
-        secure: false
+        maxAge: 86400000 // 24 hours
     },
+    store: MongoStore.create({
+        mongoUrl: process.env.mongo_link, // Use your MongoDB connection URL
+        collectionName: "sessions", // Name of the collection to store sessions in
+        ttl: 24 * 60 * 60, // Session TTL in seconds (24 hours)
+    }),
+    secret: 'my-secret-key',
+    resave: false,
+    saveUninitialized: false,
 }));
-
-
 app.use(
-    cors(
-        {
-        origin: "http://localhost:3000",
+    cors({
+        origin: process.env.CLIENT_URL,
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true
     }
@@ -61,7 +65,10 @@ app.post("/command", (req, res) => {
 /* Ignore this, authentication stuff */
 app.get("/login/success", (req, res) => {
     if (req.user) {
-        res.redirect("http://localhost:3000/")
+        console.log("Login success!");
+        console.log(req.user);
+        console.log("session",req.session)
+        res.redirect(`${process.env.CLIENT_URL}`)
     } else {
         res.status(403).json({ error: true, message: "Not Authorized" });
     }
@@ -80,20 +87,22 @@ app.get("/auth/google/",
 )
 
 app.get('/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: 'http://localhost:3000/' }),
+    passport.authenticate('google', { failureRedirect: `${process.env.CLIENT_URL}` }),
     (req, res) => {
         res.redirect("/login/success")
     }
 )
 
 app.get('/user', (req, res) => {
+    console.log(req.user);
+    console.log("session",req.session)
     res.status(200).send(req.user)
 })
 
 
 app.get('/logout', (req, res) => {
     req.logout(() => {
-        res.redirect("http://localhost:3000/");
+        res.redirect(`${process.env.CLIENT_URL}`);
     });
 });
 
@@ -133,6 +142,43 @@ app.post("/execute", async (req, res) => {
             } else {
                 directoryStruct = {}; 
             }
+            if (level === 2.1) {
+                const splitPoint = Math.ceil(flag.length / 2);
+                const flag1 = flag.slice(0, splitPoint);
+                const flag2 = flag.slice(splitPoint);
+                if (directoryStruct.home[".flag.txt"]) {
+                    directoryStruct.home[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                }
+                if (directoryStruct.home["-flag.txt"]) {
+                    directoryStruct.home["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                }
+            }
+
+            if (level === 2.2) {
+                const splitPoint = Math.ceil(flag.length / 2);
+                const flag1 = flag.slice(0, splitPoint);
+                const flag2 = flag.slice(splitPoint);
+
+                if (directoryStruct.cryptic[".flag.txt"]) {
+                    directoryStruct.cryptic[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                }
+                if (directoryStruct.cryptic["-flag.txt"]) {
+                    directoryStruct.cryptic["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                }
+            }
+
+            if (level === 2.3) {
+                const splitPoint = Math.ceil(flag.length / 2);
+                const flag1 = flag.slice(0, splitPoint);
+                const flag2 = flag.slice(splitPoint);
+
+                if (directoryStruct[".flag.txt"]) {
+                    directoryStruct[".flag.txt"].data = `FLAG PART 1: ${flag1}`;
+                }
+                if (directoryStruct["-flag.txt"]) {
+                    directoryStruct["-flag.txt"].data = `FLAG PART 2: ${flag2}`;
+                }
+            }
         } catch (error) {
             console.error("Error reading level data:", error);
             directoryStruct = {};
@@ -141,9 +187,9 @@ app.post("/execute", async (req, res) => {
         let input = null;
         for(let i = 0; i < parsedObject.length; i++) {
             const command = parsedObject[i];
-            if (command.command == 'ls') {
+            if (command.command === 'ls') {
                 output = ls.lsCommand(command.args, path, directoryStruct);
-            } else if (command.command == 'cd') {
+            } else if (command.command === 'cd') {
                 if (input != null){
                     command.args[0] = input;
                 }
@@ -154,20 +200,24 @@ app.post("/execute", async (req, res) => {
                     output = null;
                 }
             }
-            else if (command.command == 'cat') {
+            else if (command.command === 'cat') {
                 if (input != null){
                     command.args[0] = input;
                 }
                 output=cat.catCommand(command.args[0], path, directoryStruct,flag);
             }
-            else if (command.command == 'find'){
+            else if (command.command === 'find'){
                 if (input != null){
                     command.args[0] = input;
                 }
                 output = find.findCommand(command.args[0],path,directoryStruct);
-            } else if (command.command == 'grep') {
+            } else if (command.command === 'grep') {
                 // output = grep.grepCommand(command.args[0], command.args[1], path, directoryStruct);
                 output = grep.grep2(command.args[0], input, path, directoryStruct);
+            } else if (command.command === 'base64') {
+                output = base64.base64Command(command.args, path, directoryStruct,flag);
+            } else {
+                output = `${command.command}: Not found`
             }
             if (output != null) {
                 input = output.trimEnd();
